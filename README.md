@@ -1,20 +1,20 @@
 # Table of Contents
 
-*[markdown-toc](#markdown-toc)
-  *[环境依赖](#环境依赖)
-*[快速入门](#快速入门)
-  *[下载](#下载)
-  *[脚本方式](#脚本方式)
-    *[windows](#windows)
-    *[linux](#linux)
-  *[Java 运行方式](#java-运行方式)
+* [markdown-toc](#markdown-toc)
+  * [环境依赖](#环境依赖)
+* [快速入门](#快速入门)
+  * [下载](#下载)
+  * [脚本方式](#脚本方式)
+    * [windows](#windows)
+    * [linux](#linux)
+  * [Java 运行方式](#java-运行方式)
 
 
 # markdown-toc
 
-初衷：手写 markdown 时没有目录，内容较多不便于阅读。
+初衷：手写 github markdown 时没有目录，内容较多不便于阅读。
 
-作用：为 markdown 文件生成 toc，当前直接写入文件开头。
+作用：为 markdown 文件生成 toc，直接写入文件开头。
 
 备注：
 
@@ -79,14 +79,14 @@ Markdown toc 生成完成
 ```markdown
 # Table of Contents
 
-*[markdown-toc](#markdown-toc)
-  *[环境依赖](#环境依赖)
-*[快速入门](#快速入门)
-  *[下载](#下载)
-  *[脚本方式](#脚本方式)
-    *[windows](#windows)
-    *[linux](#linux)
-  *[Java 运行方式](#java-运行方式)
+* [markdown-toc](#markdown-toc)
+  * [环境依赖](#环境依赖)
+* [快速入门](#快速入门)
+  * [下载](#下载)
+  * [脚本方式](#脚本方式)
+    * [windows](#windows)
+    * [linux](#linux)
+  * [Java 运行方式](#java-运行方式)
 ```
 
 ### linux

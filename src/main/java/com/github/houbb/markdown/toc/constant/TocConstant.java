@@ -23,6 +23,6 @@ public final class TocConstant {
     /**
      * TOC 格式化
      */
-    public static final String TOC_FORMAT = "*[%s](%s)";
+    public static final String TOC_FORMAT = "* [%s](%s)";
 
 }
