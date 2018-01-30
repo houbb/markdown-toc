@@ -91,9 +91,24 @@ Markdown toc 生成完成
 
 ### linux
 
+- 赋值权限 
+
+```
+chmod +x ./markdownToc.sh
+```
+
+- 运行
+
+```
+./markdownToc.sh
+```
+
 运行 [markdownToc.sh](bin/markdownToc.sh) 脚本文件，根据提示输入对应的 md 文件信息。
 
+
 其他同上。
+
+
 
 ## Java 运行方式
 
