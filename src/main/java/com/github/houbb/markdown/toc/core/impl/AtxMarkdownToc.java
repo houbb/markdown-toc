@@ -2,9 +2,11 @@ package com.github.houbb.markdown.toc.core.impl;
 
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.core.MarkdownToc;
+import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.vo.TocVo;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,9 +21,21 @@ import java.util.List;
  */
 public class AtxMarkdownToc implements MarkdownToc {
 
+    /**    
+     * 文件内容列表    
+     */    
     private List<String> fileContentList = new LinkedList<>();
+    /**    
+     * toc str列表    
+     */    
     private List<String> tocStrList = new LinkedList<>();
+    /**    
+     * toc值对象列表    
+     */    
     private List<TocVo> tocVoList = new LinkedList<>();
+    /**    
+     * 结果列表    
+     */    
     private List<String> resultList = new LinkedList<>();
 
     /**
@@ -29,35 +43,40 @@ public class AtxMarkdownToc implements MarkdownToc {
      */
     private TocVo previous;
 
-    public void genToc(String url) {
-        //1.
-        Path path = Paths.get(url);
-
-        //2. 校验文件后缀
-
-        //3. 阅读文件内容整理
+    /**    
+     * 生成toc    
+     *    
+     * @param url 网址    
+     */    
+    public void genToc(String url, final String charsetStr) {
         try {
-            fileContentList = Files.readAllLines(path);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //4. 回写
-        init();
+            //1. 属性初始化
+            Path path = Paths.get(url);
+            Charset charset = Charset.forName(charsetStr);
 
-        try {
+            //2. 校验文件后缀
+
+            //3. 文件内容
+            fileContentList = Files.readAllLines(path, charset);
+
+            //4. toc 相关属性
+            init();
+
+            //5. 回写
             resultList.addAll(fileContentList);
-            Files.write(path, resultList);
+            Files.write(path, resultList, charset);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new MarkdownTocRuntimeException(e);
         }
-
     }
 
 
+    /**    
+     * 初始化    
+     */    
     private void init() {
-        //1. 默认文件头
-        resultList.add("Table of Contents");
-        resultList.add("-----------------\n");
+        //1. ATX 默认文件头
+        resultList.add("# Table of Contents\n");
 
         //2. 所有 toc 行
         for (String string : fileContentList) {
@@ -81,6 +100,11 @@ public class AtxMarkdownToc implements MarkdownToc {
         resultList.add("\n");
     }
 
+    /**    
+     * 显示toc    
+     *    
+     * @param tocVoList toc值对象列表    
+     */    
     private void showToc(List<TocVo> tocVoList) {
         if(tocStrList.isEmpty()) {
             return;
@@ -94,6 +118,12 @@ public class AtxMarkdownToc implements MarkdownToc {
         }
     }
 
+    /**    
+     * 得到后缀    
+     *    
+     * @param level 水平    
+     * @return java.lang.String    
+     */    
     private String getSuffix(int level) {
         StringBuilder result = new StringBuilder();
         for(int i = 0; i < level-1; i++) {
@@ -103,6 +133,11 @@ public class AtxMarkdownToc implements MarkdownToc {
     }
 
 
+    /**    
+     * 添加新的toc    
+     *    
+     * @param tocTrimStr toc trim str    
+     */    
     private void addNewToc(String tocTrimStr) {
         TocVo current = new TocVo(tocTrimStr);
 

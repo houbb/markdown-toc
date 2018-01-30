@@ -62,11 +62,6 @@ Markdown toc 生成完成
 
 - 效果对比
 
-比原来的文件在文件头新增内容:
-
-```
-
-```
 
 ### linux
 
@@ -86,4 +81,5 @@ Markdown toc 生成完成
 
 或者参考类: [AtxMarkdownTocTest.java](src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocTest.java) 编写测试代码。
 
+## 效果展示
 

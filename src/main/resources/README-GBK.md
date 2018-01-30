@@ -1,8 +1,8 @@
 # Paradise
 
-åœ¨å¹³æ—¶å†™ä¸€äº›å°é¡¹ç›®æ—¶ï¼Œå¾ˆå¤šå·¥å…·ç±»éƒ½æ˜¯é‡å¤çš„ã€‚ä¸€ç›´ä»¥æ¥éƒ½æ˜¯å¤åˆ¶ä¿®æ”¹ï¼ŒåŽæ¥æœ‰ä¸€å¤©åˆæ‰¾ä¸åˆ°äº†ã€‚
+ÔÚÆ½Ê±Ð´Ò»Ð©Ð¡ÏîÄ¿Ê±£¬ºÜ¶à¹¤¾ßÀà¶¼ÊÇÖØ¸´µÄ¡£Ò»Ö±ÒÔÀ´¶¼ÊÇ¸´ÖÆÐÞ¸Ä£¬ºóÀ´ÓÐÒ»ÌìÓÖÕÒ²»µ½ÁË¡£
 
-å¾ˆç¹çï¼Œç´¢æ€§å°±å°†å¹³æ—¶ä¼šç”¨åˆ°çš„å¤§å¤šæ•°ä¸œè¥¿æ”¾åœ¨è¿™ä¸€ä¸ªé¡¹ç›®ä¸‹é¢ã€‚
+ºÜ·±Ëö£¬Ë÷ÐÔ¾Í½«Æ½Ê±»áÓÃµ½µÄ´ó¶àÊý¶«Î÷·ÅÔÚÕâÒ»¸öÏîÄ¿ÏÂÃæ¡£
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.houbb/paradise/badge.svg)](http://mvnrepository.com/artifact/com.github.houbb/paradise)
 [![Build Status](https://www.travis-ci.org/houbb/paradise.svg?branch=release_1.1.2)](https://www.travis-ci.org/houbb/paradise?branch=release_1.1.2)
@@ -10,38 +10,34 @@
 
 ## paradise-common 
 
-æä¾›é€šç”¨å·¥å…·ã€‚ä¸»è¦æ˜¯è‡ªå·±é¡¹ç›®ä½¿ç”¨ã€‚ä¸ä¾èµ–ä¸‰æ–¹ jarã€‚
+Ìá¹©Í¨ÓÃ¹¤¾ß¡£Ö÷ÒªÊÇ×Ô¼ºÏîÄ¿Ê¹ÓÃ¡£²»ÒÀÀµÈý·½ jar¡£
 
 ## paradise-enhance
 
-åŠŸèƒ½å¢žå¼ºï¼Œä¾èµ–ä¸‰æ–¹ jarã€‚
-
-### paradise-enhance-more
-
-è¯¦æƒ…
+¹¦ÄÜÔöÇ¿£¬ÒÀÀµÈý·½ jar¡£
 
 ## paradise-core
 
-å¯¹äºŽ `compile-annotation`(è¿è¡Œæ—¶æ³¨è§£) è¿›è¡Œæ•´åˆã€‚
+¶ÔÓÚ `compile-annotation`(ÔËÐÐÊ±×¢½â) ½øÐÐÕûºÏ¡£
 
-- log-analysis-core æ•´åˆè¿‡æ¥
+- log-analysis-core ÕûºÏ¹ýÀ´
 
 @Log
 
-- cat-limiter æ•´åˆè¿‡æ¥
+- cat-limiter ÕûºÏ¹ýÀ´
 
 @LimitCount
 
 @LimitFrequency
 
-- @valid çš„é‡æ–°è®¾è®¡
+- @valid µÄÖØÐÂÉè¼Æ
 
 ## paradise-test
 
-ä»…ç”¨äºŽæœ¬é¡¹ç›®è‡ªæ£€æµ‹è¯•ã€‚
+½öÓÃÓÚ±¾ÏîÄ¿×Ô¼ì²âÊÔ¡£
 
 
-# å˜æ›´æ—¥å¿—
+# ±ä¸üÈÕÖ¾
 
 > [ChangeLog](doc/ChangeLog.md)
 
