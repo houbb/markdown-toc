@@ -18,7 +18,8 @@ public final class StringUtil {
         if (tocTitle.length() == 1) {
             return tocTitle.toLowerCase();
         }
-        return tocTitle.substring(0, 1).toLowerCase() + tocTitle.substring(1);
+        String subEmptyHandle = tocTitle.substring(1).replace(' ', '-');    //GITHUB 对于空格处理
+        return tocTitle.substring(0, 1).toLowerCase() + subEmptyHandle;
     }
 
     /**

@@ -1,3 +1,15 @@
+# Table of Contents
+
+*[markdown-toc](#markdown-toc)
+  *[环境依赖](#环境依赖)
+*[快速入门](#快速入门)
+  *[下载](#下载)
+  *[脚本方式](#脚本方式)
+    *[windows](#windows)
+    *[linux](#linux)
+  *[Java 运行方式](#java-运行方式)
+
+
 # markdown-toc
 
 初衷：手写 markdown 时没有目录，内容较多不便于阅读。
@@ -64,8 +76,17 @@ Markdown toc 生成完成
 
 比原来的文件在文件头新增内容:
 
-```
+```markdown
+# Table of Contents
 
+*[markdown-toc](#markdown-toc)
+  *[环境依赖](#环境依赖)
+*[快速入门](#快速入门)
+  *[下载](#下载)
+  *[脚本方式](#脚本方式)
+    *[windows](#windows)
+    *[linux](#linux)
+  *[Java 运行方式](#java-运行方式)
 ```
 
 ### linux
@@ -85,5 +106,3 @@ Markdown toc 生成完成
 直接参考 [Main.java](src/main/java/com/github/houbb/markdown/toc/Main.java) 编写测试代码。
 
 或者参考类: [AtxMarkdownTocTest.java](src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocTest.java) 编写测试代码。
-
-## english title    test
