@@ -12,13 +12,17 @@
 
 # markdown-toc
 
+[![Build Status](https://www.travis-ci.org/houbb/markdown-toc.svg?branch=master)](https://www.travis-ci.org/houbb/markdown-toc?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/houbb/markdown-toc/badge.svg?branch=master)](https://coveralls.io/github/houbb/markdown-toc?branch=master)
+
+
 初衷：手写 github markdown 时没有目录，内容较多不便于阅读。
 
 作用：为 markdown 文件生成 toc，直接写入文件开头。
 
 备注：
 
-对于标题，md 由两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
+对于标题，md 有两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
 
 暂时只支持 **atx** 形式。
 
