@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.houbb</groupId>
+    <artifactId>markdown-toc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!--============================== All Plugins START==============================-->
+        <plugin.compiler.version>3.2</plugin.compiler.version>
+        <plugin.compiler.version>3.2</plugin.compiler.version>
+        <plugin.surefire.version>2.18.1</plugin.surefire.version>
+        <plugin.surefire.skip-it>false</plugin.surefire.skip-it>
+        <plugin.surefire.ignore-failure>false</plugin.surefire.ignore-failure>
+        <!--main-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <compiler.level>1.8</compiler.level>
+    </properties>
+
+
+    <build>
+        <finalName>${project.name}</finalName>
+
+        <pluginManagement>
+            <!--============================== All Plugins ==============================-->
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${plugin.compiler.version}</version>
+                    <configuration>
+                        <source>${compiler.level}</source>
+                        <target>${compiler.level}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${plugin.surefire.version}</version>
+                    <configuration>
+                        <skipTests>${plugin.surefire.skip-it}</skipTests>
+                        <testFailureIgnore>${plugin.surefire.ignore-failure}</testFailureIgnore>
+                    </configuration>
+                </plugin>
+
+                <!--打包成为可执行的 jar-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <configuration>
+                        <appendAssemblyId>false</appendAssemblyId>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
+                        <archive>
+                            <manifest>
+                                <mainClass>com.github.houbb.markdown.toc.Main</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>assembly</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.github.houbb</groupId>
+                    <artifactId>gen-maven-plugin</artifactId>
+                    <version>1.0.2</version>
+                    <configuration>
+                        <isOverwriteWhenExists>false</isOverwriteWhenExists>
+                        <encoding>utf-8</encoding>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <!--use plugins-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.houbb</groupId>
+                <artifactId>gen-maven-plugin</artifactId>
+            </plugin>
+
+            <!--mvn clean install sonar:sonar -Dmaven.test.skip=true -Dsonar.host.url=http://localhost:9000-->
+            <!--sonar-->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+        </plugins>
+
+    </build>
+
+
+</project>
