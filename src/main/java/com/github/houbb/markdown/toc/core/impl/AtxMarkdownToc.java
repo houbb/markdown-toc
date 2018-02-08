@@ -94,7 +94,8 @@ public class AtxMarkdownToc implements MarkdownToc {
                     break;  //直接跳出循环
                 }
             }
-            nextAndRemove(stringIterator, 2);   //最后的换行
+            stringIterator.remove();    //移除当前换行
+            nextAndRemove(stringIterator, 1);   //最后的换行
         }
     }
 
