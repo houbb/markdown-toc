@@ -21,7 +21,7 @@ public class AtxMarkdownTocTest {
         final String charsetStr = "UTF-8";
 
         //测试时请将下面这段话取消注释(Please cancel comment when you test.)
-        new AtxMarkdownToc().genToc(filePath, charsetStr);
+//        new AtxMarkdownToc().genToc(filePath, charsetStr);
     }
 
 }
