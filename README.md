@@ -6,6 +6,7 @@
   * [下载](#下载)
   * [脚本方式](#脚本方式)
     * [windows](#windows)
+* [Table of Contents](#table-of-Contents)
     * [linux](#linux)
   * [Java 运行方式](#java-运行方式)
 
@@ -92,6 +93,8 @@ Markdown toc 生成完成
     * [linux](#linux)
   * [Java 运行方式](#java-运行方式)
 ```
+
+注意：为了保证多次执行的目录结果保持正确。**请勿修改**目录生成内容，且添加内容在目录之后进行添加。
 
 ### linux
 
