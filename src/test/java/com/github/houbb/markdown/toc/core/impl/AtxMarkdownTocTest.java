@@ -17,12 +17,11 @@ public class AtxMarkdownTocTest {
     */
     @Test
     public void genTocTest() throws Exception {
-        final String filePath = "请填写文件路径";
+        final String filePath = "D:\\CODE\\_OTHER\\markdown-toc\\README.md";
         final String charsetStr = "UTF-8";
 
         //测试时请将下面这段话取消注释(Please cancel comment when you test.)
-//        new AtxMarkdownToc().genToc(filePath, charsetStr);
+        new AtxMarkdownToc().genToc(filePath, charsetStr);
     }
-
 
 }
