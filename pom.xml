@@ -22,7 +22,7 @@
 
         <!--main-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <compiler.level>1.8</compiler.level>
+        <compiler.level>1.7</compiler.level>
 
         <!--test-->
         <junit.version>4.12</junit.version>
