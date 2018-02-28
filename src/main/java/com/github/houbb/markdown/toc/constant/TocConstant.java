@@ -26,6 +26,11 @@ public final class TocConstant {
     public static final String STAR = "*";
 
     /**
+     * 减号
+     */
+    public static final String MINUS = "-";
+
+    /**
      * TOC 格式化
      */
     public static final String TOC_FORMAT = "* [%s](%s)";
