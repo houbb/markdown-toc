@@ -23,7 +23,7 @@ public class IncreaseMap {
         String tocHref = getTocHref(originalName);
         AtomicInteger value = map.get(tocHref);
         if(value != null) {
-            int count = value.getAndIncrement();
+            int count = value.incrementAndGet();
             actualName = TocConstant.ASTERISK+tocHref+TocConstant.MINUS+count;
         } else {
             AtomicInteger one = new AtomicInteger(0);
