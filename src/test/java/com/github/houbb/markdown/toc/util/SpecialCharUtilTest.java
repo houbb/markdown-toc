@@ -16,10 +16,11 @@ public class SpecialCharUtilTest {
     @Test
     public void buildSpecialTitle() {
         Set<String> stringSet = SpecialCharUtil.getSpecialCharSet();
-        final String format = "# A%sB\n" +
-                "A%sB\n";
+        final String format = "# AABOUThello%sBDDDDout\n" +
+                "AABOUThello%sBDDDDout\n";
         for(String string : stringSet) {
             System.out.println(String.format(format, string, string));
         }
     }
+
 }
