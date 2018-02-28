@@ -18,6 +18,10 @@
 
 如 **a&b**，结果为 **ab**
 
+> [特殊字符文件](../src/main/resources/special_char.txt)
+
+> [特殊字符测试](SpecialCharTest.md)
+
 - 如果标题重复
 
 第一个出现的标题正常。
