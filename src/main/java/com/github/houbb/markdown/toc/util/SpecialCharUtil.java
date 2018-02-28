@@ -11,19 +11,23 @@ import java.util.Set;
  * @since 1.0.1
  * @version 1.0.1
  */
-public class SpecialCharUtil {
+public final class SpecialCharUtil {
 
-    /**
-     * 获取特殊字符的集合
-     */
-    public static Set<String> getSpecialCharSet() {
-        Set<String> stringSet = new HashSet<>();
+    private static Set<String> stringSet = new HashSet<>();
+
+    static {
         InputStream inputStream = SpecialCharUtil.class.getResourceAsStream("/special_char.txt");
         List<String> stringList = FileUtil.getFileContentEachLine(inputStream, 0);
         for(String string: stringList) {
             String[] strings = StringUtil.splitByAnyBlank(string);
             stringSet.add(strings[0].trim());
         }
+    }
+
+    /**
+     * 获取特殊字符的集合
+     */
+    public static Set<String> getSpecialCharSet() {
         return stringSet;
     }
 

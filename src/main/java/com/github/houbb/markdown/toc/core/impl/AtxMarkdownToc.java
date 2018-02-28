@@ -3,6 +3,7 @@ package com.github.houbb.markdown.toc.core.impl;
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.core.MarkdownToc;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
+import com.github.houbb.markdown.toc.support.IncreaseMap;
 import com.github.houbb.markdown.toc.vo.TocVo;
 
 import java.io.IOException;
@@ -127,12 +128,15 @@ public class AtxMarkdownToc implements MarkdownToc {
         }
 
         //3. 构建 tocVo
-        TocVo root = TocVo.rootToc();
+        //3.1 创建一个自增 map，用来处理重复名称
+        IncreaseMap increaseMap = new IncreaseMap();
+
+        TocVo root = TocVo.rootToc(increaseMap);
         root.setParent(null);
         tocVoList.add(root); //初始化根节点
         previous = root;
         for(String string : tocStrList) {
-            addNewToc(string);
+            addNewToc(string, increaseMap);
         }
 
         //4. 展现
@@ -178,8 +182,8 @@ public class AtxMarkdownToc implements MarkdownToc {
      *    
      * @param tocTrimStr toc trim str    
      */    
-    private void addNewToc(String tocTrimStr) {
-        TocVo current = new TocVo(tocTrimStr);
+    private void addNewToc(String tocTrimStr, IncreaseMap increaseMap) {
+        TocVo current = new TocVo(tocTrimStr, increaseMap);
 
         if(current.getLevel() == 1) {       //1 级目录
             TocVo root = tocVoList.get(0);

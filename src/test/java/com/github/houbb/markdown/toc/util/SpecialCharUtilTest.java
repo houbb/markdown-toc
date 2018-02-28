@@ -16,8 +16,8 @@ public class SpecialCharUtilTest {
     @Test
     public void buildSpecialTitle() {
         Set<String> stringSet = SpecialCharUtil.getSpecialCharSet();
-        final String format = "# AABOUThello%sBDDDDout\n" +
-                "AABOUThello%sBDDDDout\n";
+        final String format = "# ILOVEMD%sILOVEMD\n" +
+                "ILOVEMD%sILOVEMD\n";
         for(String string : stringSet) {
             System.out.println(String.format(format, string, string));
         }

@@ -1,6 +1,7 @@
 package com.github.houbb.markdown.toc.vo;
 
 import com.github.houbb.markdown.toc.constant.TocConstant;
+import com.github.houbb.markdown.toc.support.IncreaseMap;
 import com.github.houbb.markdown.toc.util.StringUtil;
 
 import java.util.LinkedList;
@@ -50,12 +51,18 @@ public class TocVo {
     private List<TocVo> children = new LinkedList<>();
 
     /**
+     * 自增 MAP
+     */
+    private final IncreaseMap increaseMap;
+
+    /**
      *  toc值对象
      *
      * @param origin 起源
      */
-    public TocVo(String origin) {
+    public TocVo(String origin, IncreaseMap increaseMap) {
         this.origin = origin;
+        this.increaseMap = increaseMap;
         init();
     }
 
@@ -69,7 +76,7 @@ public class TocVo {
 
         String[] strings = this.origin.split("\\s+");
         this.tocTitle = this.origin.substring(strings[0].length()).trim();
-        this.tocHref = TocConstant.ASTERISK + StringUtil.getTocHref(tocTitle);
+        this.tocHref = increaseMap.buildActualName(tocTitle);
         this.level = strings[0].length();
     }
 
@@ -78,8 +85,8 @@ public class TocVo {
      *
      * @return com.github.houbb.markdown.toc.vo.TocVo
      */
-    public static TocVo rootToc() {
-        TocVo tocVo = new TocVo(ROOT_NAME);
+    public static TocVo rootToc(IncreaseMap increaseMap) {
+        TocVo tocVo = new TocVo(ROOT_NAME, increaseMap);
         tocVo.setLevel(0);
         return tocVo;
     }

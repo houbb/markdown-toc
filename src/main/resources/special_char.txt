@@ -12,8 +12,6 @@ $
 *
 (
 )
-_
--
 +
 =
 :
@@ -41,7 +39,6 @@ _
 ¢	&cent;
 €	&euro;
 „	&bdquo;
-ˆ	&circ;
 †	&dagger;
 ‡	&Dagger;
 ≈	&asymp;
@@ -50,10 +47,6 @@ _
 ↓	&darr;
 ♦	&diams;
 ≡	&equiv;
-α	&alpha;
-β	&beta;
-χ	&chi;
-Χ	&Chi;
 ©	&copy;
 °	&deg;
 ÷	&divide;
@@ -71,7 +64,6 @@ _
 ♥	&hearts;
 ∞	&infin;
 ∫	&int;
-γ	&gamma;
 >	&gt;
 ¡	&iexcl;
 ¿	&iquest;
@@ -89,14 +81,6 @@ _
 −	&minus;
 ≠	&ne;
 ‾	&oline;
-ν	&nu;
-ω	&omega;
-ο	&omicron;
-φ	&phi;
-Ν	&Nu;
-Ω	&Omega;
-Ο	&Omicron;
-Φ	&Phi;
 »	&raquo;
 ¬	&not;
 ¶	&para;
@@ -105,29 +89,13 @@ _
 ∏	&prod;
 √	&radic;
 →	&rarr;
-π	&pi;
-ψ	&psi;
-ρ	&rho;
-σ	&sigma;
-τ	&tau;
-Π	&Pi;
-Ψ	&Psi;
-Ρ	&Rho;
-Σ	&Sigma;
-Τ	&Tau;
 ®	&reg;
 §	&sect;
 ¨	&uml;
 ×	&times;
 ™	&trade;
-ª	&ordf;
 ”	&rdquo;
 ˜	&tilde;
 ♠	&spades;
 ∑	&sum;
 ↑	&uarr;
-υ	&upsilon;
-ξ	&xi;
-Υ	&Upsilon;
-Ξ	&Xi;
-ς	&sigmaf;
