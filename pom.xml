@@ -6,7 +6,7 @@
 
     <groupId>com.github.houbb</groupId>
     <artifactId>markdown-toc</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <properties>
         <!--============================== All Plugins START==============================-->
@@ -22,7 +22,7 @@
 
         <!--main-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <compiler.level>1.8</compiler.level>
+        <compiler.level>1.7</compiler.level>
 
         <!--test-->
         <junit.version>4.12</junit.version>

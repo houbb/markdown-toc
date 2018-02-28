@@ -1,14 +1,26 @@
 # Table of Contents
 
+* [Features](#features)
 * [markdown-toc](#markdown-toc)
   * [环境依赖](#环境依赖)
 * [快速入门](#快速入门)
   * [下载](#下载)
   * [脚本方式](#脚本方式)
     * [windows](#windows)
+* [Table of Contents](#table-of-contents)
     * [linux](#linux)
   * [Java 运行方式](#java-运行方式)
 
+
+# Features
+
+- github Markdown 文件一键生成目录，且支持多次生成
+
+- 支持重复标题的生成
+
+- 支持特殊字符的过滤
+
+> [变更日志](doc/ChangeLog.md)
 
 # markdown-toc
 
@@ -92,6 +104,8 @@ Markdown toc 生成完成
     * [linux](#linux)
   * [Java 运行方式](#java-运行方式)
 ```
+
+注意：为了保证多次执行的目录结果保持正确。**请勿修改**目录生成内容，且添加内容在目录之后进行添加。
 
 ### linux
 

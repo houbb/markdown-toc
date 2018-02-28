@@ -1,0 +1,101 @@
+!   NOT
+|   OR
+#
+.
+\
+/
+~
+@
+$
+%
+^
+*
+(
+)
++
+=
+:
+;
+'
+"
+|
+?
+,
+.
+®
+©
+™
+″	&Prime;
+′	&prime;
+´	&acute;
+&	&amp;
+“	&quot;
+›	&rsaquo;
+’	&rsquo;
+‚	&sbquo;
+¦	&brvbar;
+•	&bull;
+¸	&cedil;
+¢	&cent;
+€	&euro;
+„	&bdquo;
+†	&dagger;
+‡	&Dagger;
+≈	&asymp;
+∩	&cap;
+♣	&clubs;
+↓	&darr;
+♦	&diams;
+≡	&equiv;
+©	&copy;
+°	&deg;
+÷	&divide;
+½	&frac12;
+¼	&frac14;
+¾	&frac34;
+£	&pound;
+…	&hellip;
+“	&ldquo;
+‹	&lsaquo;
+‘	&lsquo;
+⁄	&frasl;
+≥	&ge;
+↔	&harr;
+♥	&hearts;
+∞	&infin;
+∫	&int;
+>	&gt;
+¡	&iexcl;
+¿	&iquest;
+«	&laquo;
+<	&lt;
+¯	&macr;
+¥	&yen;
+·	&middot;
+—	&mdash;
+–	&ndash;
+‰	&permil;
+←	&larr;
+≤	&le;
+◊	&loz;
+−	&minus;
+≠	&ne;
+‾	&oline;
+»	&raquo;
+¬	&not;
+¶	&para;
+±	&plusmn;
+∂	&part;
+∏	&prod;
+√	&radic;
+→	&rarr;
+®	&reg;
+§	&sect;
+¨	&uml;
+×	&times;
+™	&trade;
+”	&rdquo;
+˜	&tilde;
+♠	&spades;
+∑	&sum;
+↑	&uarr;

@@ -14,18 +14,6 @@ public class StringUtilTest {
 
     /**
     *
-    * Method: getTocHref(tocTitle)
-    */
-    @Test
-    public void getTocHrefTest() throws Exception {
-        Assert.assertEquals("你好世界", StringUtil.getTocHref("你好世界"));
-        Assert.assertEquals("helloWorld", StringUtil.getTocHref("helloWorld"));
-        Assert.assertEquals("helloWorld", StringUtil.getTocHref("HelloWorld"));
-        Assert.assertEquals("english-title----test", StringUtil.getTocHref("english title    test"));
-    }
-
-    /**
-    *
     * Method: isEmpty(string)
     */
     @Test
