@@ -1,7 +1,6 @@
 package com.github.houbb.markdown.toc.util;
 
 
-
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 
 import java.io.*;
@@ -25,8 +24,8 @@ public final class FileUtil {
      * 获取指定文件的每一行内容
      * [TWR](http://blog.csdn.net/doctor_who2004/article/details/50901195)
      *
-     * @param inputStream     输入流
-     * @param initLine 初始读取行数
+     * @param inputStream 输入流
+     * @param initLine    初始读取行数
      * @return 错误返回空列表
      * @since 1.7
      */
@@ -34,17 +33,20 @@ public final class FileUtil {
         List<String> contentList = new LinkedList<>();
 
 
-        String charset = "UTF-8";  //暂时使用此编码
+        //暂时使用此编码
+        String charset = "UTF-8";
         try (InputStreamReader inputStreamReader = new InputStreamReader(inputStream, charset);
              BufferedReader bufferedReader = new BufferedReader(inputStreamReader)
         ) {
-            int lineNo = 0;// 用于记录行号
+            // 用于记录行号
+            int lineNo = 0;
             while (lineNo < initLine) {
                 lineNo++;
                 String ignore = bufferedReader.readLine();
             }
 
-            String dataEachLine;   //每一行的内容
+            //每一行的内容
+            String dataEachLine;
             while ((dataEachLine = bufferedReader.readLine()) != null) {
                 lineNo++;
                 //跳过空白行

@@ -8,6 +8,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 增量 map
+ * @author houbinbin
+ * @since 1.0.0
+ */
 public class IncreaseMap {
 
     private Map<String, AtomicInteger> map = new ConcurrentHashMap<>();
