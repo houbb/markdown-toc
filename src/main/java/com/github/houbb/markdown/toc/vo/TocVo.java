@@ -1,8 +1,6 @@
 package com.github.houbb.markdown.toc.vo;
 
-import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
-import com.github.houbb.markdown.toc.util.StringUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -41,9 +39,9 @@ public class TocVo {
     private String tocHref;
 
     /**
-     * 亲
+     * 父节点
      */
-    private TocVo parent;   //父节点
+    private TocVo parent;
 
     /**
      * 孩子

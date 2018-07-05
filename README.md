@@ -1,141 +1,157 @@
 # Table of Contents
 
-* [Features](#features)
 * [markdown-toc](#markdown-toc)
-  * [环境依赖](#环境依赖)
+  * [Features](#features)
+* [环境依赖](#环境依赖)
+  * [JDK](#jdk)
+  * [Maven](#maven)
+  * [变更日志](#变更日志)
 * [快速入门](#快速入门)
-  * [下载](#下载)
-  * [脚本方式](#脚本方式)
-    * [windows](#windows)
-* [Table of Contents](#table-of-contents)
-    * [linux](#linux)
-  * [Java 运行方式](#java-运行方式)
+  * [maven 引入](#maven-引入)
+  * [md 文件](#md-文件)
+  * [快速开始](#快速开始)
+* [属性配置](#属性配置)
+  * [属性说明](#属性说明)
+  * [返回值说明](#返回值说明)
+* [测试案例](#测试案例)
+* [其他](#其他)
 
 
-# Features
+# markdown-toc
 
-- github Markdown 文件一键生成目录，且支持多次生成
+
+```
+  _ __ ___   __ _ _ __| | ____| | _____      ___ __       | |_ ___   ___ 
+ | '_ ` _ \ / _` | '__| |/ / _` |/ _ \ \ /\ / / '_ \ _____| __/ _ \ / __|
+ | | | | | | (_| | |  |   < (_| | (_) \ V  V /| | | |_____| || (_) | (__ 
+ |_| |_| |_|\__,_|_|  |_|\_\__,_|\___/ \_/\_/ |_| |_|      \__\___/ \___|
+ 
+```
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.houbb/markdown-toc/badge.svg)](http://mvnrepository.com/artifact/com.github.houbb/markdown-toc)
+[![Build Status](https://www.travis-ci.org/houbb/markdown-toc.svg?branch=release_1.0.2)](https://www.travis-ci.org/houbb/markdown-toc?branch=release_1.0.2)
+[![Coverage Status](https://coveralls.io/repos/github/houbb/markdown-toc/badge.svg?branch=release_1.0.2)](https://coveralls.io/github/houbb/markdown-toc?branch=release_1.0.2)
+
+Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面展现。
+
+
+- 文档
+
+[中文说明](README.md) | [English Readme](README-ENGLISH.md)
+
+> 备注
+
+对于标题，md 有两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 
+和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
+
+暂时只支持 **atx** 形式。
+
+## 变更日志
+
+[变更日志](doc/changelog/CHANGELOG.md)
+
+## Features
+
+- Github Markdown 文件一键生成目录
+
+- 支持 fluent 优雅的写法
+
+- 支持多次生成
 
 - 支持重复标题的生成
 
 - 支持特殊字符的过滤
 
-> [变更日志](doc/ChangeLog.md)
+- 支持指定不同的文件编码
 
-# markdown-toc
+- 支持文件夹的文件批量处理(可指定是否包含子文件夹文件)
 
-[![Build Status](https://www.travis-ci.org/houbb/markdown-toc.svg?branch=master)](https://www.travis-ci.org/houbb/markdown-toc?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/houbb/markdown-toc/badge.svg?branch=master)](https://coveralls.io/github/houbb/markdown-toc?branch=master)
+- 支持是否写入文件，可返回目录的内容，便于用户自行处理
 
+- ...
 
-初衷：手写 github markdown 时没有目录，内容较多不便于阅读。
+# 环境依赖
 
-作用：为 markdown 文件生成 toc，直接写入文件开头。
-
-备注：
-
-对于标题，md 有两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
-
-暂时只支持 **atx** 形式。
-
-## 环境依赖
-
-- JDK 
+## JDK 
 
 JDK7+, 请确保 JDK 设置正确。
 
+## Maven
+
+Jar 使用 [Maven](http://maven.apache.org/) 进行统一管理。 
+
+
+
 # 快速入门
 
-## 下载
+## maven 引入
 
-使用 git 或者 直接下载本项目到本地。约定项目的根路径为 `${BASE_DIR}`
-
-## 脚本方式
-
-到 `${BASE_DIR}/bin` 下，文件如下：
-
-```
-markdown-toc.jar
-markdownToc.bat
-markdownToc.sh
+```xml
+<dependency>
+    <groupId>com.github.houbb</groupId>
+    <artifactId>markdown-toc</artifactId>
+    <version>1.0.2</version>
+</dependency>
 ```
 
-### windows
+## md 文件
 
-运行 [markdownToc.bat](bin/markdownToc.bat) 脚本文件，根据提示输入对应的 md 文件信息。
+本项目支持的 md 文件后缀名称为 `.md` 或者 `.markdown`
 
-- 属性说明
+## 快速开始
 
-| 属性 | 说明 | 备注 | 
-|:---|:---|:---|
-| filePath | md 文件的路径 | 必填。|
-| charset | md 文件的编码 | 选填。默认值 `UTF-8` |
- 
-- 实际日志
+- 单个文件
 
-```
-E:\CODE_GEN\markdown-toc\bin>markdownToc.bat
-----------------------
-Markdown file path is required, such as: E:\CODE_GEN\markdown-toc\README.md
-Markdown file charset is optional, default value is UTF-8
-----------------------
-Markdown file path: E:\CODE_GEN\markdown-toc\README.md
-Markdown file charset:
-
-You input path: E:\CODE_GEN\markdown-toc\README.md
-You input charset:
-开始生成：【文件路径】E:\CODE_GEN\markdown-toc\README.md, 【文件编码】UTF-8
-Markdown toc 生成完成
+```java
+AtxMarkdownToc.newInstance().genTocFile(path);
 ```
 
-- 效果对比
+其中 path 为 md 文件的路径
 
-比原来的文件在文件头新增内容:
+- 指定文件夹
 
-```markdown
-# Table of Contents
-
-* [markdown-toc](#markdown-toc)
-  * [环境依赖](#环境依赖)
-* [快速入门](#快速入门)
-  * [下载](#下载)
-  * [脚本方式](#脚本方式)
-    * [windows](#windows)
-    * [linux](#linux)
-  * [Java 运行方式](#java-运行方式)
+```java
+AtxMarkdownToc.newInstance().genTocFile(path);
 ```
 
-注意：为了保证多次执行的目录结果保持正确。**请勿修改**目录生成内容，且添加内容在目录之后进行添加。
+其中 path 为 md 文件的父类文件夹
 
-### linux
+# 属性配置
 
-- 赋值权限 
+- 代码示例
 
-```
-chmod +x ./markdownToc.sh
-```
-
-- 运行
-
-```
-./markdownToc.sh
+```java
+AtxMarkdownToc.newInstance()
+                .charset("UTF-8")
+                .write(true)
+                .subTree(true);
 ```
 
-运行 [markdownToc.sh](bin/markdownToc.sh) 脚本文件，根据提示输入对应的 md 文件信息。
+## 属性说明 
 
+| 序号 | 属性 | 默认值 |  说明 |
+|:----|:----|:----|:----|
+| 1 | charset | `UTF-8` | 文件编码 | 
+| 2 | write | `true` | 是否将 toc 写入文件(默认写入) | 
+| 3 | subTree | `true` | 是否包含子文件夹的文件(默认包含) | 
 
-其他同上。
+## 返回值说明
 
+`genTocFile()` 返回 TocGen，`genTocDir()` 返回 List<TocGen>
 
+- TocGen 属性说明
 
-## Java 运行方式
+| 序号 | 属性 |  类型 |  说明 |
+|:----|:----|:----| :----|
+| 1 | filePath | String | 当前 md 的文件路径 |
+| 2 | tocLines | List<String> | 当前 md 文件对应的目录内容 |
 
-- 环境依赖 
+# 测试案例
 
-需要 mvn 环境
+[单个文件-目录生成测试案例](https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocFileTest.java)
 
-- 参考
+[文件夹-目录生成测试案例](https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocDirTest.java)
 
-直接参考 [Main.java](src/main/java/com/github/houbb/markdown/toc/Main.java) 编写测试代码。
+# 其他
 
-或者参考类: [AtxMarkdownTocTest.java](src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocTest.java) 编写测试代码。
+> [Issues & Bugs](https://github.com/houbb/markdown-toc/issues)
