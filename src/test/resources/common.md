@@ -1,18 +1,8 @@
-# Table of Contents
-
-* [Paradise](#paradise)
-  * [paradise-common](#paradise-common)
-  * [paradise-enhance](#paradise-enhance)
-  * [paradise-core](#paradise-core)
-  * [paradise-test](#paradise-test)
-* [±ä¸üÈÕÖ¾](#±ä¸üÈÕÖ¾)
-
-
 # Paradise
 
-ÔÚÆ½Ê±Ð´Ò»Ð©Ð¡ÏîÄ¿Ê±£¬ºÜ¶à¹¤¾ßÀà¶¼ÊÇÖØ¸´µÄ¡£Ò»Ö±ÒÔÀ´¶¼ÊÇ¸´ÖÆÐÞ¸Ä£¬ºóÀ´ÓÐÒ»ÌìÓÖÕÒ²»µ½ÁË¡£
+åœ¨å¹³æ—¶å†™ä¸€äº›å°é¡¹ç›®æ—¶ï¼Œå¾ˆå¤šå·¥å…·ç±»éƒ½æ˜¯é‡å¤çš„ã€‚ä¸€ç›´ä»¥æ¥éƒ½æ˜¯å¤åˆ¶ä¿®æ”¹ï¼ŒåŽæ¥æœ‰ä¸€å¤©åˆæ‰¾ä¸åˆ°äº†ã€‚
 
-ºÜ·±Ëö£¬Ë÷ÐÔ¾Í½«Æ½Ê±»áÓÃµ½µÄ´ó¶àÊý¶«Î÷·ÅÔÚÕâÒ»¸öÏîÄ¿ÏÂÃæ¡£
+å¾ˆç¹çï¼Œç´¢æ€§å°±å°†å¹³æ—¶ä¼šç”¨åˆ°çš„å¤§å¤šæ•°ä¸œè¥¿æ”¾åœ¨è¿™ä¸€ä¸ªé¡¹ç›®ä¸‹é¢ã€‚
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.houbb/paradise/badge.svg)](http://mvnrepository.com/artifact/com.github.houbb/paradise)
 [![Build Status](https://www.travis-ci.org/houbb/paradise.svg?branch=release_1.1.2)](https://www.travis-ci.org/houbb/paradise?branch=release_1.1.2)
@@ -20,38 +10,33 @@
 
 ## paradise-common 
 
-Ìá¹©Í¨ÓÃ¹¤¾ß¡£Ö÷ÒªÊÇ×Ô¼ºÏîÄ¿Ê¹ÓÃ¡£²»ÒÀÀµÈý·½ jar¡£
+æä¾›é€šç”¨å·¥å…·ã€‚ä¸»è¦æ˜¯è‡ªå·±é¡¹ç›®ä½¿ç”¨ã€‚ä¸ä¾èµ–ä¸‰æ–¹ jarã€‚
 
 ## paradise-enhance
 
-¹¦ÄÜÔöÇ¿£¬ÒÀÀµÈý·½ jar¡£
+åŠŸèƒ½å¢žå¼ºï¼Œä¾èµ–ä¸‰æ–¹ jarã€‚
 
 ## paradise-core
 
-¶ÔÓÚ `compile-annotation`(ÔËÐÐÊ±×¢½â) ½øÐÐÕûºÏ¡£
+å¯¹äºŽ `compile-annotation`(è¿è¡Œæ—¶æ³¨è§£) è¿›è¡Œæ•´åˆã€‚
 
-- log-analysis-core ÕûºÏ¹ýÀ´
+- log-analysis-core æ•´åˆè¿‡æ¥
 
 @Log
 
-- cat-limiter ÕûºÏ¹ýÀ´
+- cat-limiter æ•´åˆè¿‡æ¥
 
 @LimitCount
 
 @LimitFrequency
 
-- @valid µÄÖØÐÂÉè¼Æ
+- @valid çš„é‡æ–°è®¾è®¡
 
 ## paradise-test
 
-½öÓÃÓÚ±¾ÏîÄ¿×Ô¼ì²âÊÔ¡£
+ä»…ç”¨äºŽæœ¬é¡¹ç›®è‡ªæ£€æµ‹è¯•ã€‚
 
 
-# ±ä¸üÈÕÖ¾
+# å˜æ›´æ—¥å¿—
 
 > [ChangeLog](doc/ChangeLog.md)
-
-
-
-
-

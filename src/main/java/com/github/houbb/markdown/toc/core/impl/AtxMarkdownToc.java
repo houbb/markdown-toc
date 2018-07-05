@@ -4,6 +4,9 @@ import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.core.MarkdownToc;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
+import com.github.houbb.markdown.toc.util.FileUtil;
+import com.github.houbb.markdown.toc.util.StringUtil;
+import com.github.houbb.markdown.toc.vo.TocGen;
 import com.github.houbb.markdown.toc.vo.TocVo;
 
 import java.io.IOException;
@@ -11,6 +14,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,41 +28,140 @@ import java.util.List;
  */
 public class AtxMarkdownToc implements MarkdownToc {
 
+    //region 内部属性
     /**
      * 文件内容列表
      */
     private List<String> fileContentList = new LinkedList<>();
+
     /**
      * toc str列表
      */
-    private List<String> tocStrList      = new LinkedList<>();
+    private List<String> tocStrList = new LinkedList<>();
+
     /**
      * toc值对象列表
      */
-    private List<TocVo>  tocVoList       = new LinkedList<>();
+    private List<TocVo> tocVoList = new LinkedList<>();
+
     /**
      * 结果列表
      */
-    private List<String> resultList      = new LinkedList<>();
+    private List<String> resultList = new LinkedList<>();
 
     /**
      * 上一个节点
      */
     private TocVo previous;
+    //endregion
+
+    //region 外部配置相关
+    /**
+     * 编码(默认为utf-8)
+     */
+    private Charset charset = Charset.forName("UTF-8");
 
     /**
-     * 生成toc
-     *
-     * @param url 网址
+     * 是否包含子文件夹下的文件(默认为包含)
      */
-    @Override
-    public void genToc(String url, final String charsetStr) {
-        try {
-            //1. 属性初始化
-            Path path = Paths.get(url);
-            Charset charset = Charset.forName(charsetStr);
+    private boolean subTree = true;
 
-            //2. 校验文件后缀
+    /**
+     * 是否写入到文件(默认写入)
+     */
+    private boolean write = true;
+    //endregion
+
+    @Override
+    public TocGen genTocFile(String filePath) {
+        checkPath(filePath);
+        Path path = Paths.get(filePath);
+        return genTocForFile(path, this.charset);
+    }
+
+    @Override
+    public List<TocGen> genTocDir(String dirPath) {
+        checkPath(dirPath);
+
+        List<TocGen> tocGens = new ArrayList<>();
+
+        Path path = Paths.get(dirPath);
+        if (!Files.isDirectory(path)) {
+            final String msg = String.format("%s 不是文件夹目录", dirPath);
+            throw new MarkdownTocRuntimeException(msg);
+        }
+        List<Path> paths = FileUtil.getMdFilePathList(path, subTree);
+        for(Path filePath : paths) {
+            TocGen tocGen = genTocForFile(filePath, charset);
+            tocGens.add(tocGen);
+        }
+        return tocGens;
+    }
+
+    /**
+     * 创建一个实例
+     * @return 新的实例
+     */
+    public static AtxMarkdownToc newInstance() {
+        return new AtxMarkdownToc();
+    }
+
+    /**
+     * 设置编码
+     * @param charset 编码
+     * @return this
+     */
+    public AtxMarkdownToc charset(final String charset) {
+        this.charset = Charset.forName(charset);
+        return this;
+    }
+    /**
+     * 设置是否递归
+     * 1. 注意：只有在文件夹模式下生效
+     * @param subTree 是否包含子文件夹元素
+     * @return this
+     */
+    public AtxMarkdownToc subTree(final boolean subTree) {
+        this.subTree = subTree;
+        return this;
+    }
+
+    /**
+     * 设置是否写入到文件中
+     * @param write 写入文件
+     * @return this
+     */
+    public AtxMarkdownToc write(final boolean write) {
+        this.write = write;
+        return this;
+    }
+
+    /**
+     * 校验路径
+     *
+     * @param path 文件路径
+     */
+    private void checkPath(final String path) {
+        if (StringUtil.isEmpty(path)) {
+            throw new MarkdownTocRuntimeException("文件路径不可为空！");
+        }
+    }
+
+    /**
+     * 为单个文件生成 toc
+     *
+     * TODO:
+     * 1. 这里锁需要进行优化
+     * 2. 粒度可以更加细致
+     * @param path       文件路径
+     * @param charset 编码
+     */
+    private synchronized TocGen genTocForFile(final Path path, final Charset charset) {
+        try {
+           //2. 校验文件后缀
+            if(!FileUtil.isMdFile(path.toString())) {
+                throw new MarkdownTocRuntimeException("当前只支持 markdown 文件");
+            }
 
             //3. 文件内容
             initFileContentList(path, charset);
@@ -67,8 +170,12 @@ public class AtxMarkdownToc implements MarkdownToc {
             initToc();
 
             //5. 回写
+            TocGen tocGen = new TocGen(path.toString(), resultList);
             resultList.addAll(fileContentList);
-            Files.write(path, resultList, charset);
+            if(this.write) {
+                Files.write(path, resultList, charset);
+            }
+            return tocGen;
         } catch (IOException e) {
             throw new MarkdownTocRuntimeException(e);
         }
@@ -83,6 +190,7 @@ public class AtxMarkdownToc implements MarkdownToc {
      * @throws IOException if any
      */
     private void initFileContentList(Path path, Charset charset) throws IOException {
+        fileContentList.clear();
         fileContentList = Files.readAllLines(path, charset);
 
         //原先的目录过滤
@@ -124,6 +232,11 @@ public class AtxMarkdownToc implements MarkdownToc {
      * 初始化 toc 内容
      */
     private void initToc() {
+        //0. 清空原始的数据信息
+        resultList.clear();
+        tocStrList.clear();
+        tocVoList.clear();
+
         //1. ATX 默认文件头
         resultList.add(TocConstant.DEFAULT_TOC_HEAD + TocConstant.RETURN_LINE);
 
