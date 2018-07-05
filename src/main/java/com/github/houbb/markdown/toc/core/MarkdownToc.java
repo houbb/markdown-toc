@@ -1,7 +1,11 @@
 package com.github.houbb.markdown.toc.core;
 
+import com.github.houbb.markdown.toc.vo.TocGen;
+
+import java.util.List;
+
 /**
- * markdown toc
+ * markdown toc 生成接口
  * @author bbhou
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
@@ -9,10 +13,17 @@ package com.github.houbb.markdown.toc.core;
 public interface MarkdownToc {
 
     /**
-     * 文件 URL
-     * @param url 文件地址
-     * @param charset 文件编码
+     * 生成单个文件的 toc
+     * @param filePath 文件路径
+     * @return 生成的结果信息
      */
-    void genToc(final String url, final String charset);
+    TocGen genTocFile(final String filePath);
+
+    /**
+     * 生成指定目录下的所有 markdown 文件 toc
+     * @param dirPath 文件夹路径
+     * @return 生成的结果信息列表
+     */
+    List<TocGen> genTocDir(final String dirPath);
 
 }

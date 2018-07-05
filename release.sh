@@ -2,9 +2,9 @@
 echo "============================= RELEASE START..."
 
 ## 版本号信息(需要手动指定)
-version="1.1.3"
-newVersion="1.1.4"
-projectName="paradise*"
+version="1.0.2"
+newVersion="1.0.3"
+projectName="markdown-toc"
 
 # release 项目版本
 ## snapshot 版本号

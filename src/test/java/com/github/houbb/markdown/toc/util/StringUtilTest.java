@@ -22,5 +22,4 @@ public class StringUtilTest {
         Assert.assertTrue(StringUtil.isEmpty(""));
     }
 
-
 }

@@ -9,13 +9,18 @@ package com.github.houbb.markdown.toc.util;
 public final class StringUtil {
 
     /**
+     * 空白字符串
+     */
+    public static final String EMPTY = "";
+
+    /**
      * 是否为空
      * @param string 字符串
      * @return {@code true} 是
      */
     public static boolean isEmpty(final String string) {
         return null == string
-                || string.equals("");
+                || string.equals(EMPTY);
     }
 
     /**

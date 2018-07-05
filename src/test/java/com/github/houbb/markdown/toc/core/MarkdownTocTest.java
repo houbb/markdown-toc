@@ -13,11 +13,10 @@ public class MarkdownTocTest {
 
     /**
     *
-    * Method: genToc(url, charset)
+    * Method: genTocFile(url, charset)
     */
     @Test
     public void genTocTest() throws Exception {
     }
-
 
 }
