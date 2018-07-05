@@ -26,6 +26,7 @@ public final class SpecialCharUtil {
 
     /**
      * 获取特殊字符的集合
+     * @return 集合
      */
     public static Set<String> getSpecialCharSet() {
         return stringSet;

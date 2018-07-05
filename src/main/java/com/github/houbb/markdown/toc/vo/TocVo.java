@@ -57,6 +57,7 @@ public class TocVo {
      *  toc值对象
      *
      * @param origin 起源
+     * @param increaseMap map
      */
     public TocVo(String origin, IncreaseMap increaseMap) {
         this.origin = origin;
@@ -81,6 +82,7 @@ public class TocVo {
     /**
      * 根源toc
      *
+     * @param increaseMap map 集合
      * @return com.github.houbb.markdown.toc.vo.TocVo
      */
     public static TocVo rootToc(IncreaseMap increaseMap) {
