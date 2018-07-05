@@ -32,7 +32,7 @@
 
 Markdown-to-toc can be used to generate a directory of the Markdown page for github page rendering.
 
-- 文档
+- README
 
 [中文说明](README.md) | [English Readme](README-ENGLISH.md)
 
@@ -145,9 +145,9 @@ AtxMarkdownToc.newInstance()
 
 # test cases
 
-[a single file - directory to generate test cases] (https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocFileTest.java)
+[a single file - directory to generate test cases](https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocFileTest.java)
 
-[folder - directory to generate test cases] (https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocDirTest.java)
+[folder - directory to generate test cases](https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocDirTest.java)
 
 # other
 
