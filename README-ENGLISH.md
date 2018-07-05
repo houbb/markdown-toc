@@ -8,7 +8,7 @@
 * [quick start](#quick-start)
   * [maven introduced](#maven-introduced)
   * [md file](#md-file)
-* [Quick start](#quick-start-1)
+  * [quick start](#quick start-1)
 * [attribute configuration](#attribute-configuration)
   * [attribute description](#attribute-description)
   * [return value description](#return-value-description)
@@ -92,7 +92,7 @@ Change log
 
 The project for the support of md file name suffix `.md` or `.markdown`
 
-# Quick start
+## quick start
 
 - single file
 
