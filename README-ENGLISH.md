@@ -32,6 +32,10 @@
 
 Markdown-to-toc can be used to generate a directory of the Markdown page for github page rendering.
 
+- 文档
+
+[中文说明](README.md) | [English Readme](README-ENGLISH.md)
+
 > note
 
 For the title, there are two kinds of md grammar [setext] (http://docutils.sourceforge.net/mirror/setext.html)

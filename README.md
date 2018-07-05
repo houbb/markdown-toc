@@ -34,12 +34,21 @@
 
 Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面展现。
 
+
+- 文档
+
+[中文说明](README.md) | [English Readme](README-ENGLISH.md)
+
 > 备注
 
 对于标题，md 有两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 
 和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
 
 暂时只支持 **atx** 形式。
+
+## 变更日志
+
+[变更日志](doc/changelog/CHANGELOG.md)
 
 ## Features
 
@@ -61,8 +70,6 @@ Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面�
 
 - ...
 
-
-
 # 环境依赖
 
 ## JDK 
@@ -73,9 +80,7 @@ JDK7+, 请确保 JDK 设置正确。
 
 Jar 使用 [Maven](http://maven.apache.org/) 进行统一管理。 
 
-## 变更日志
 
-> [变更日志](doc/changelog/CHANGELOG.md)
 
 # 快速入门
 
