@@ -5,7 +5,6 @@
 
 package com.github.houbb.markdown.toc.support;
 
-import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.util.FileUtil;
 
 import java.nio.file.FileVisitResult;
@@ -17,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <p> </p>
+ * <p> MD 文件遍历器 </p>
  *
  * <pre> Created: 2018/7/5 上午11:10  </pre>
  * <pre> Project: markdown-toc  </pre>
