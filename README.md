@@ -1,8 +1,37 @@
+# Table of Contents
+
+* [markdown-toc](#markdown-toc)
+  * [Features](#features)
+* [环境依赖](#环境依赖)
+  * [JDK](#jdk)
+  * [Maven](#maven)
+  * [变更日志](#变更日志)
+* [快速入门](#快速入门)
+  * [maven 引入](#maven-引入)
+  * [md 文件](#md-文件)
+  * [快速开始](#快速开始)
+* [属性配置](#属性配置)
+  * [属性说明](#属性说明)
+  * [返回值说明](#返回值说明)
+* [测试案例](#测试案例)
+* [其他](#其他)
+
+
 # markdown-toc
 
+
+```
+███╗   ███╗ █████╗ ██████╗ ██╗  ██╗██████╗  ██████╗ ██╗    ██╗███╗   ██╗   ████████╗ ██████╗  ██████╗
+████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔══██╗██╔═══██╗██║    ██║████╗  ██║   ╚══██╔══╝██╔═══██╗██╔════╝
+██╔████╔██║███████║██████╔╝█████╔╝ ██║  ██║██║   ██║██║ █╗ ██║██╔██╗ ██║█████╗██║   ██║   ██║██║     
+██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗ ██║  ██║██║   ██║██║███╗██║██║╚██╗██║╚════╝██║   ██║   ██║██║     
+██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗██████╔╝╚██████╔╝╚███╔███╔╝██║ ╚████║      ██║   ╚██████╔╝╚██████╗
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═══╝      ╚═╝    ╚═════╝  ╚═════╝
+```
+                                                                                                                                                           
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.houbb/markdown-toc/badge.svg)](http://mvnrepository.com/artifact/com.github.houbb/markdown-toc)
-[![Build Status](https://www.travis-ci.org/houbb/markdown-toc.svg?branch=master)](https://www.travis-ci.org/houbb/markdown-toc?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/houbb/markdown-toc/badge.svg?branch=master)](https://coveralls.io/github/houbb/markdown-toc?branch=master)
+[![Build Status](https://www.travis-ci.org/houbb/markdown-toc.svg?branch=master)](https://www.travis-ci.org/houbb/markdown-toc?branch=release_1.0.2)
+[![Coverage Status](https://coveralls.io/repos/github/houbb/markdown-toc/badge.svg?branch=master)](https://coveralls.io/github/houbb/markdown-toc?branch=release_1.0.2)
 
 Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面展现。
 
@@ -106,7 +135,7 @@ AtxMarkdownToc.newInstance()
 
 `genTocFile()` 返回 TocGen，`genTocDir()` 返回 List<TocGen>
 
-TocGen 属性说明
+- TocGen 属性说明
 
 | 序号 | 属性 |  类型 |  说明 |
 |:----|:----|:----| :----|
@@ -115,7 +144,9 @@ TocGen 属性说明
 
 # 测试案例
 
+[单个文件-目录生成测试案例](https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocFileTest.java)
 
+[文件夹-目录生成测试案例](https://github.com/houbb/markdown-toc/blob/release_1.0.2/src/test/java/com/github/houbb/markdown/toc/core/impl/AtxMarkdownTocDirTest.java)
 
 # 其他
 
