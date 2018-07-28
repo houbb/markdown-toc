@@ -2,6 +2,7 @@ package com.github.houbb.markdown.toc.core.impl;
 
 import com.github.houbb.markdown.toc.core.MarkdownToc;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
+import com.github.houbb.markdown.toc.support.I18N;
 import com.github.houbb.markdown.toc.util.CollectionUtil;
 import com.github.houbb.markdown.toc.util.FileUtil;
 import com.github.houbb.markdown.toc.util.StringUtil;
@@ -78,7 +79,7 @@ public class AtxMarkdownToc implements MarkdownToc {
 
         Path path = Paths.get(dirPath);
         if (!Files.isDirectory(path)) {
-            final String msg = String.format("%s 不是文件夹目录", dirPath);
+            final String msg = String.format(I18N.get(I18N.Key.pathIsNotDirectory), dirPath);
             throw new MarkdownTocRuntimeException(msg);
         }
         List<Path> paths = FileUtil.getMdFilePathList(path, subTree);
@@ -170,7 +171,7 @@ public class AtxMarkdownToc implements MarkdownToc {
      */
     private void checkPath(final String path) {
         if (StringUtil.isEmpty(path)) {
-            throw new MarkdownTocRuntimeException("文件路径不可为空！");
+            throw new MarkdownTocRuntimeException(I18N.get(I18N.Key.pathIsNotAllowEmpty));
         }
     }
 
