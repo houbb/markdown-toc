@@ -5,6 +5,8 @@
 
 package com.github.houbb.markdown.toc.util;
 
+import org.apiguardian.api.API;
+
 /**
  * <p> 数组工具类 </p>
  *
@@ -12,9 +14,8 @@ package com.github.houbb.markdown.toc.util;
  * <pre> Project: markdown-toc  </pre>
  *
  * @author houbinbin
- * @version 1.0
- * @since JDK 1.7
  */
+@API(status = API.Status.MAINTAINED)
 public final class ArrayUtil {
 
     private ArrayUtil(){}

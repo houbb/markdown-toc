@@ -1,5 +1,7 @@
 package com.github.houbb.markdown.toc.util;
 
+import org.apiguardian.api.API;
+
 import java.io.InputStream;
 import java.util.HashSet;
 import java.util.List;
@@ -11,6 +13,7 @@ import java.util.Set;
  * @since 1.0.1
  * @version 1.0.1
  */
+@API(status = API.Status.MAINTAINED)
 public final class SpecialCharUtil {
 
     private static Set<String> stringSet = new HashSet<>();

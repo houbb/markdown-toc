@@ -7,6 +7,8 @@ package com.github.houbb.markdown.toc.support;
 
 import com.github.houbb.markdown.toc.util.FileUtil;
 
+import org.apiguardian.api.API;
+
 import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
@@ -25,6 +27,7 @@ import java.util.List;
  * @version 1.0
  * @since JDK 1.7
  */
+@API(status = API.Status.INTERNAL)
 public class MarkdownFileWalker extends SimpleFileVisitor<Path> {
 
     /**

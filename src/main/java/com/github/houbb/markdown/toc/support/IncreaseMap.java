@@ -4,6 +4,8 @@ import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.util.SpecialCharUtil;
 import com.github.houbb.markdown.toc.util.StringUtil;
 
+import org.apiguardian.api.API;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -13,6 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author houbinbin
  * @since 1.0.0
  */
+@API(status = API.Status.INTERNAL)
 public class IncreaseMap {
 
     private Map<String, AtomicInteger> map = new ConcurrentHashMap<>();

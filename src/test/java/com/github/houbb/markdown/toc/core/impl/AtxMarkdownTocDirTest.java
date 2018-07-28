@@ -35,6 +35,34 @@ public class AtxMarkdownTocDirTest {
     }
 
     /**
+     * 无 md 文件测试
+     */
+    @Test
+    public void noMdTest() {
+        String path = TestPathUtil.getAppRootPath("sub0");
+        List<TocGen> tocGens = AtxMarkdownToc.newInstance()
+                .subTree(false)
+                .write(false)
+                .genTocDir(path);
+
+        System.out.println(tocGens.size());
+    }
+
+    /**
+     * 无 md 文件测试
+     */
+    @Test
+    public void oneMdTest() {
+        String path = TestPathUtil.getAppRootPath("sub1");
+        List<TocGen> tocGens = AtxMarkdownToc.newInstance()
+                .subTree(false)
+                .write(false)
+                .genTocDir(path);
+
+        System.out.println(tocGens.size());
+    }
+
+    /**
      * 普通-测试
      * 1. 默认进行文件的递归遍历
      */
