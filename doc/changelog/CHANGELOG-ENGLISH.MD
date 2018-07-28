@@ -31,3 +31,11 @@
 | 2 | U | adjusts document structure | 2018-07-04 23:09:46 | |
 | 3 | D | delete `*.jar` support | 2018-07-05 10:13:55 | |
 
+# release_1.0.3
+
+| serial number | change type | means | time | note |
+|:---|:---|:---|:---|:--|
+| 1 | A | Support threads. | 2018-07-28 13:07:13 |
+| 2 | A | Add Api rules. | 2018-07-28 13:07:13 |
+| 3 | A | Support I18N. | 2018-07-28 17:12:25 |
+

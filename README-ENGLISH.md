@@ -61,8 +61,10 @@ And [atx] (http://www.aaronsw.com/2002/atx/) mode.
 
 - supports writing to files, returns contents of the directory, and allows users to process by themselves
 
--...
 
+- support multi-threads for directory files.
+
+- support i18n
 
 
 # environmental dependence
