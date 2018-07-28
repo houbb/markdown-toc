@@ -89,7 +89,7 @@ Change log
 <dependency>
     <groupId>com.github.houbb</groupId>
     <artifactId>markdown-toc</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
