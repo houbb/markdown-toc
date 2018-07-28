@@ -7,6 +7,7 @@ package com.github.houbb.markdown.toc.support.md.impl;
 
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
+import com.github.houbb.markdown.toc.support.I18N;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
 import com.github.houbb.markdown.toc.support.md.MarkdownFileToc;
 import com.github.houbb.markdown.toc.util.FileUtil;
@@ -81,7 +82,7 @@ public class AtxMarkdownFileToc implements MarkdownFileToc {
         try {
             //2. 校验文件后缀
             if(!FileUtil.isMdFile(path.toString())) {
-                throw new MarkdownTocRuntimeException("当前只支持 markdown 文件");
+                throw new MarkdownTocRuntimeException(I18N.get(I18N.Key.onlySupportMdFile));
             }
 
             //3. 文件内容
