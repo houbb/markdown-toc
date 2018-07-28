@@ -2,6 +2,8 @@ package com.github.houbb.markdown.toc.vo;
 
 import com.github.houbb.markdown.toc.support.IncreaseMap;
 
+import org.apiguardian.api.API;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
+@API(status = API.Status.INTERNAL)
 public class TocVo {
     /**
      * ROOT 节点名称

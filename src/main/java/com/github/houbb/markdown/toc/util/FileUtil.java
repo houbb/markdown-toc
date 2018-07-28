@@ -4,6 +4,8 @@ package com.github.houbb.markdown.toc.util;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.support.MarkdownFileWalker;
 
+import org.apiguardian.api.API;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,6 +21,7 @@ import java.util.Objects;
  * @author bbhou
  * @version 1.1.0
  */
+@API(status = API.Status.MAINTAINED)
 public final class FileUtil {
 
     private FileUtil() {

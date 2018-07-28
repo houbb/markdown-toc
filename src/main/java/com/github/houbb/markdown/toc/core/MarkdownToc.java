@@ -2,6 +2,8 @@ package com.github.houbb.markdown.toc.core;
 
 import com.github.houbb.markdown.toc.vo.TocGen;
 
+import org.apiguardian.api.API;
+
 import java.util.List;
 
 /**
@@ -10,6 +12,7 @@ import java.util.List;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
+@API(status = API.Status.MAINTAINED)
 public interface MarkdownToc {
 
     /**

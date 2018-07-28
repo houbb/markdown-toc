@@ -1,11 +1,14 @@
 package com.github.houbb.markdown.toc.util;
 
+import org.apiguardian.api.API;
+
 /**
  * String 工具类
  * @author bbhou
  * @since 1.0.0
  * @version 1.0.0
  */
+@API(status = API.Status.MAINTAINED)
 public final class StringUtil {
 
     /**
