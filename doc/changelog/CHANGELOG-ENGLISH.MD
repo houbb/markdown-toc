@@ -39,3 +39,10 @@
 | 2 | A | Add Api rules. | 2018-07-28 13:07:13 |
 | 3 | A | Support I18N. | 2018-07-28 17:12:25 |
 
+# release_1.0.4
+
+| serial number | change type | means | time | note |
+|:---|:---|:---|:---|:--|
+| 1 | A | Add API version | 2018-08-15 17:44:24 |
+| 2 | A | Generate toc by content list  | 2018-08-15 17:44:24 |
+
