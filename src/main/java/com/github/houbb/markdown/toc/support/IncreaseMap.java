@@ -1,6 +1,7 @@
 package com.github.houbb.markdown.toc.support;
 
 import com.github.houbb.markdown.toc.constant.TocConstant;
+import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.util.SpecialCharUtil;
 import com.github.houbb.markdown.toc.util.StringUtil;
 
@@ -15,11 +16,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author houbinbin
  * @since 1.0.0
  */
-@API(status = API.Status.INTERNAL)
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public class IncreaseMap {
 
     private Map<String, AtomicInteger> map = new ConcurrentHashMap<>();
-
 
     /**
      * 构建确切的名称

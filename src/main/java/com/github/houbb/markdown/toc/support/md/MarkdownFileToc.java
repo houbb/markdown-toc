@@ -5,6 +5,7 @@
 
 package com.github.houbb.markdown.toc.support.md;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.vo.TocGen;
 import com.github.houbb.markdown.toc.vo.config.TocConfig;
 
@@ -18,7 +19,7 @@ import org.apiguardian.api.API;
  *
  * @author houbinbin
  */
-@API(status = API.Status.INTERNAL)
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public interface MarkdownFileToc {
 
     /**

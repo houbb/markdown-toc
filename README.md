@@ -92,7 +92,7 @@ Jar 使用 [Maven](http://maven.apache.org/) 进行统一管理。
 <dependency>
     <groupId>com.github.houbb</groupId>
     <artifactId>markdown-toc</artifactId>
-    <version>1.0.3</version>
+    <version>${maven-version}</version>
 </dependency>
 ```
 

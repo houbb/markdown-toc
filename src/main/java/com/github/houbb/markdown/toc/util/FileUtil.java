@@ -1,6 +1,7 @@
 package com.github.houbb.markdown.toc.util;
 
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.support.MarkdownFileWalker;
 
@@ -21,7 +22,7 @@ import java.util.Objects;
  * @author bbhou
  * @version 1.1.0
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public final class FileUtil {
 
     private FileUtil() {
@@ -107,10 +108,6 @@ public final class FileUtil {
             String dataEachLine;
             while ((dataEachLine = bufferedReader.readLine()) != null) {
                 lineNo++;
-                //跳过空白行
-                if (Objects.equals("", dataEachLine)) {
-                    continue;
-                }
                 contentList.add(dataEachLine);
             }
         } catch (IOException e) {

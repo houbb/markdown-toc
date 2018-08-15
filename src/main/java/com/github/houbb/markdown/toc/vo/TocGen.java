@@ -5,6 +5,8 @@
 
 package com.github.houbb.markdown.toc.vo;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.List;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public class TocGen {
 
     /**

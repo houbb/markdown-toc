@@ -1,5 +1,6 @@
 package com.github.houbb.markdown.toc.vo;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
 
 import org.apiguardian.api.API;
@@ -14,7 +15,7 @@ import java.util.List;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
-@API(status = API.Status.INTERNAL)
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public class TocVo {
     /**
      * ROOT 节点名称

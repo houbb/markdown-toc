@@ -5,6 +5,8 @@
 
 package com.github.houbb.markdown.toc.vo.config;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 import java.nio.charset.Charset;
@@ -17,7 +19,7 @@ import java.nio.charset.Charset;
  *
  * @author houbinbin
  */
-@API(status = API.Status.INTERNAL)
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public class TocConfig {
 
     /**
