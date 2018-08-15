@@ -6,6 +6,8 @@
 
 package com.github.houbb.markdown.toc.util;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 /**
@@ -14,7 +16,7 @@ import org.apiguardian.api.API;
  * @since 1.0.3, 2018-07-25 11:12:08
  * @version 1.0.3
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_3)
 public final class ThreadUtil {
 
     /**

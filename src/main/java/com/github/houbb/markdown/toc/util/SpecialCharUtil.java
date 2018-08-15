@@ -1,5 +1,7 @@
 package com.github.houbb.markdown.toc.util;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 import java.io.InputStream;
@@ -13,17 +15,17 @@ import java.util.Set;
  * @since 1.0.1
  * @version 1.0.1
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_1)
 public final class SpecialCharUtil {
 
-    private static Set<String> stringSet = new HashSet<>();
+    private static final Set<String> STRING_SET = new HashSet<>();
 
     static {
         InputStream inputStream = SpecialCharUtil.class.getResourceAsStream("/special_char.txt");
         List<String> stringList = FileUtil.getFileContentEachLine(inputStream, 0);
         for(String string: stringList) {
             String[] strings = StringUtil.splitByAnyBlank(string);
-            stringSet.add(strings[0].trim());
+            STRING_SET.add(strings[0].trim());
         }
     }
 
@@ -32,7 +34,7 @@ public final class SpecialCharUtil {
      * @return 集合
      */
     public static Set<String> getSpecialCharSet() {
-        return stringSet;
+        return STRING_SET;
     }
 
 }

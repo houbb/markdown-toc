@@ -5,6 +5,7 @@
 
 package com.github.houbb.markdown.toc.util;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.support.md.MarkdownFileToc;
 import com.github.houbb.markdown.toc.support.md.impl.AtxMarkdownFileToc;
 import com.github.houbb.markdown.toc.vo.TocGen;
@@ -13,7 +14,7 @@ import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.apiguardian.api.API;
 
 /**
- * <p> </p>
+ * <p> threadlocal 工具类 </p>
  *
  * <pre> Created: 2018/7/27 下午6:49  </pre>
  * <pre> Project: markdown-toc  </pre>
@@ -22,7 +23,7 @@ import org.apiguardian.api.API;
  * @version 1.0
  * @since JDK 1.7
  */
-@API(status = API.Status.INTERNAL)
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public class ThreadLocalUtil {
 
     /**

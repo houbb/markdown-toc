@@ -5,6 +5,8 @@
 
 package com.github.houbb.markdown.toc.util;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 import java.util.Collection;
@@ -19,7 +21,7 @@ import java.util.Collection;
  * @version 1.0
  * @since 1.0.3, 2018-07-28 12:49:19
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public final class CollectionUtil {
 
     private CollectionUtil(){}

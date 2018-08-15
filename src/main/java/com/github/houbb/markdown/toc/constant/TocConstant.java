@@ -8,7 +8,7 @@ import org.apiguardian.api.API;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
-@API(status = API.Status.INTERNAL)
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public final class TocConstant {
 
     private TocConstant(){}

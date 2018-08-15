@@ -5,6 +5,10 @@
 
 package com.github.houbb.markdown.toc.support;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
+import org.apiguardian.api.API;
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -18,6 +22,7 @@ import java.util.ResourceBundle;
  * @version 1.0.3
  * @since 1.0.3, 2018-07-28 16:53:13
  */
+@API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_3)
 public final class I18N {
 
     /**

@@ -1,5 +1,7 @@
 package com.github.houbb.markdown.toc.exception;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 /**
@@ -8,7 +10,7 @@ import org.apiguardian.api.API;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public class MarkdownTocRuntimeException extends RuntimeException{
 
     private static final long serialVersionUID = 2259479890083314622L;

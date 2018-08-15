@@ -5,6 +5,8 @@
 
 package com.github.houbb.markdown.toc.util;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
+
 import org.apiguardian.api.API;
 
 /**
@@ -15,7 +17,7 @@ import org.apiguardian.api.API;
  *
  * @author houbinbin
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public final class ArrayUtil {
 
     private ArrayUtil(){}

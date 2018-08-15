@@ -1,5 +1,6 @@
 package com.github.houbb.markdown.toc.core.impl;
 
+import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.core.MarkdownToc;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.support.I18N;
@@ -34,7 +35,7 @@ import java.util.concurrent.Future;
  * @version 1.0.0
  * @since 1.0.0, 2018/01/30
  */
-@API(status = API.Status.MAINTAINED)
+@API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public class AtxMarkdownToc implements MarkdownToc {
 
     //region 外部配置相关
