@@ -76,13 +76,13 @@ Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面�
 
 ## JDK 
 
-JDK7+, 请确保 JDK 设置正确。
+JDK8+, 请确保 JDK 设置正确。
+
+ps: 项目完全兼容 jdk7 语法，只是编译环境一直为 jdk8。如果为 jdk7，请自行下载本项目编译。
 
 ## Maven
 
 Jar 使用 [Maven](http://maven.apache.org/) 进行统一管理。 
-
-
 
 # 快速入门
 

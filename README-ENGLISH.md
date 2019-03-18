@@ -71,8 +71,9 @@ And [atx] (http://www.aaronsw.com/2002/atx/) mode.
 
 ## the JDK
 
-JDK7+, make sure the JDK is set up correctly.
+JDK8+, make sure the JDK is set up correctly.
 
+Note: If you are use jdk7，download this code and compile by yourself.
 ## Maven
 
 Jars are managed uniformly using [Maven](http://maven.apache.org/).
