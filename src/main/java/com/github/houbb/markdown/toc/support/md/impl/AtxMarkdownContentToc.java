@@ -12,6 +12,7 @@ import com.github.houbb.markdown.toc.support.md.MarkdownContentToc;
 import com.github.houbb.markdown.toc.util.CollectionUtil;
 import com.github.houbb.markdown.toc.vo.TocVo;
 
+import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.apiguardian.api.API;
 
 import java.util.Collections;
@@ -31,6 +32,13 @@ import java.util.List;
 public class AtxMarkdownContentToc implements MarkdownContentToc {
 
     //region 内部属性
+
+    /**
+     * 配置信息
+     * @since 1.0.5
+     */
+    private final TocConfig config;
+
     /**
      * toc str列表
      */
@@ -50,6 +58,10 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
      * 上一个节点
      */
     private TocVo previous;
+
+    public AtxMarkdownContentToc(TocConfig config) {
+        this.config = config;
+    }
     //endregion
 
     @Override

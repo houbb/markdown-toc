@@ -34,11 +34,6 @@ import java.util.List;
 @API(status = API.Status.INTERNAL, since = VersionConstant.V_1_0_0)
 public class AtxMarkdownFileToc implements MarkdownFileToc {
 
-    /**
-     * 文件内容列表
-     */
-    private MarkdownContentToc markdownContentToc = new AtxMarkdownContentToc();
-
     @Override
     public TocGen genTocFile(String filePath, TocConfig config) {
         Path path = Paths.get(filePath);
@@ -55,12 +50,15 @@ public class AtxMarkdownFileToc implements MarkdownFileToc {
      */
     private TocGen genTocForFile(final Path path, TocConfig config) {
         try {
+            MarkdownContentToc markdownContentToc = new AtxMarkdownContentToc(config);
+
             //1. 校验文件后缀
             if(!FileUtil.isMdFile(path.toString())) {
                 throw new MarkdownTocRuntimeException(I18N.get(I18N.Key.onlySupportMdFile));
             }
 
             //2. 获取 toc 列表
+            //TODO: 生成对应的 order 编号
             List<String> contentList = Files.readAllLines(path, config.getCharset());
             List<String> trimTocContentList = markdownContentToc.trimToc(contentList);
             List<String> tocList = markdownContentToc.getTocLines(trimTocContentList, false);

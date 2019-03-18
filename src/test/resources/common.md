@@ -1,5 +1,74 @@
 # Table of Contents
 
+* [Table of Contents](#table-of-contents)
+* [Table of Contents](#table-of-contents-1)
+* [Table of Contents](#table-of-contents-2)
+* [Table of Contents](#table-of-contents-3)
+* [Table of Contents](#table-of-contents-4)
+* [Table of Contents](#table-of-contents-5)
+* [Table of Contents](#table-of-contents-6)
+* [Table of Contents](#table-of-contents-7)
+* [Table of Contents](#table-of-contents-8)
+* [Table of Contents](#table-of-contents-9)
+* [Table of Contents](#table-of-contents-10)
+* [Table of Contents](#table-of-contents-11)
+* [Table of Contents](#table-of-contents-12)
+* [Table of Contents](#table-of-contents-13)
+* [Paradise](#paradise)
+  * [paradise-common](#paradise-common)
+  * [paradise-enhance](#paradise-enhance)
+  * [paradise-core](#paradise-core)
+  * [paradise-test](#paradise-test)
+* [变更日志](#变更日志)
+
+
+# Table of Contents
+
+* [Table of Contents](#table-of-contents)
+* [Table of Contents](#table-of-contents-1)
+* [Table of Contents](#table-of-contents-2)
+* [Table of Contents](#table-of-contents-3)
+* [Table of Contents](#table-of-contents-4)
+* [Table of Contents](#table-of-contents-5)
+* [Table of Contents](#table-of-contents-6)
+* [Table of Contents](#table-of-contents-7)
+* [Table of Contents](#table-of-contents-8)
+* [Table of Contents](#table-of-contents-9)
+* [Table of Contents](#table-of-contents-10)
+* [Table of Contents](#table-of-contents-11)
+* [Table of Contents](#table-of-contents-12)
+* [Paradise](#paradise)
+  * [paradise-common](#paradise-common)
+  * [paradise-enhance](#paradise-enhance)
+  * [paradise-core](#paradise-core)
+  * [paradise-test](#paradise-test)
+* [变更日志](#变更日志)
+
+
+# Table of Contents
+
+* [Table of Contents](#table-of-contents)
+* [Table of Contents](#table-of-contents-1)
+* [Table of Contents](#table-of-contents-2)
+* [Table of Contents](#table-of-contents-3)
+* [Table of Contents](#table-of-contents-4)
+* [Table of Contents](#table-of-contents-5)
+* [Table of Contents](#table-of-contents-6)
+* [Table of Contents](#table-of-contents-7)
+* [Table of Contents](#table-of-contents-8)
+* [Table of Contents](#table-of-contents-9)
+* [Table of Contents](#table-of-contents-10)
+* [Table of Contents](#table-of-contents-11)
+* [Paradise](#paradise)
+  * [paradise-common](#paradise-common)
+  * [paradise-enhance](#paradise-enhance)
+  * [paradise-core](#paradise-core)
+  * [paradise-test](#paradise-test)
+* [变更日志](#变更日志)
+
+
+# Table of Contents
+
 * [Paradise](#paradise)
   * [paradise-common](#paradise-common)
   * [paradise-enhance](#paradise-enhance)

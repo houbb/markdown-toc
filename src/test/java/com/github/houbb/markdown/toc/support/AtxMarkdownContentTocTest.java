@@ -11,6 +11,7 @@ import com.github.houbb.markdown.toc.util.CollectionUtil;
 import com.github.houbb.markdown.toc.util.FileUtil;
 import com.github.houbb.markdown.toc.util.TestPathUtil;
 
+import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +19,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.nio.charset.Charset;
 import java.util.List;
 
 /**
@@ -37,7 +39,8 @@ public class AtxMarkdownContentTocTest {
 
     @Before
     public void before() {
-        markdownContentToc = new AtxMarkdownContentToc();
+        TocConfig config = new TocConfig();
+        markdownContentToc = new AtxMarkdownContentToc(config);
     }
 
     @Test
