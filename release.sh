@@ -28,7 +28,7 @@ echo "2. PUSH TO GITHUB DONE."
 
 
 # 推送到 maven 中央仓库
-mvn clean deploy -P release
+mvn clean deploy -Dmaven.test.skip=true -P release
 
 echo "3. PUSH TO MAVEN CENTER DONE."
 
