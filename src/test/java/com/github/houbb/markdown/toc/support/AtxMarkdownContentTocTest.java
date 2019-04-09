@@ -19,7 +19,6 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.nio.charset.Charset;
 import java.util.List;
 
 /**
@@ -46,28 +45,28 @@ public class AtxMarkdownContentTocTest {
     @Test
     public void emptyTest() {
         List<String> lines = getLines("empty.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         Assert.assertTrue(CollectionUtil.isEmpty(tocs));
     }
 
     @Test
     public void emptyContentTest() {
         List<String> lines = getLines("empty-content.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         Assert.assertTrue(CollectionUtil.isEmpty(tocs));
     }
 
     @Test
     public void commonTest() {
         List<String> lines = getLines("common.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         showTocs(tocs);
     }
 
     @Test
     public void nLevelTest() {
         List<String> lines = getLines("N-LEVEL.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         showTocs(tocs);
     }
 

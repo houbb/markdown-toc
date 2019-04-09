@@ -9,13 +9,13 @@
 | O | optimizes |
 | F | fixes BUG |
 
-# release_1. 0.0
+# release_1.0.0
 
 | serial number | change type | means | time | note |
 |:----|:----|:----|:----|:----|
 | 1 | A | add toc to generate | | |
 
-# release_1. 0.1
+# release_1.0.1
 
 | serial number | change type | means | time | note |
 |:----|:----|:----|:----|:----|
@@ -23,7 +23,7 @@
 | 2 | A | add title name and repeat | | |
 | 3 | A | add A special symbol of the title to handle | | |
 
-# release_1. 0.2
+# release_1.0.2
 
 | serial number | change type | means | time | note |
 |:----|:----|:----|:----|:----|
@@ -46,3 +46,8 @@
 | 1 | A | Add API version | 2018-08-15 17:44:24 |
 | 2 | A | Generate toc by content list  | 2018-08-15 17:44:24 |
 
+# release_1.0.5
+
+| serial number | change type | means | time | note |
+|:---|:---|:---|:---|:--|
+| 1 | A | Add toc order gen support | 2019-4-9 15:47:03 |

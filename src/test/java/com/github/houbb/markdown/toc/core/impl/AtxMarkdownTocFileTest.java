@@ -67,7 +67,21 @@ public class AtxMarkdownTocFileTest {
         String path = TestPathUtil.getAppRootPath("common.md");
 
         TocGen tocGen = AtxMarkdownToc.newInstance()
-                .subTree(false)
+                .write(false)
+                .genTocFile(path);
+
+        System.out.println(tocGen);
+    }
+
+    /**
+     * 编号测试
+     */
+    @Test
+    public void orderTest() {
+        String path = TestPathUtil.getAppRootPath("common.md");
+
+        TocGen tocGen = AtxMarkdownToc.newInstance()
+                .order(true)
                 .genTocFile(path);
 
         System.out.println(tocGen);
@@ -87,6 +101,20 @@ public class AtxMarkdownTocFileTest {
     }
 
     /**
+     * readme测试
+     */
+    @Test
+    public void readMeTest() {
+        String path = TestPathUtil.getAppRootPath("readme/README.md");
+
+        TocGen tocGen = AtxMarkdownToc.newInstance()
+                .order(true)
+                .genTocFile(path);
+
+        System.out.println(tocGen);
+    }
+
+    /**
      * 演示配置测试
      */
     @Test
@@ -94,7 +122,8 @@ public class AtxMarkdownTocFileTest {
         AtxMarkdownToc.newInstance()
                 .charset("UTF-8")
                 .write(true)
-                .subTree(true);
+                .subTree(true)
+                .order(true);
     }
 
 }

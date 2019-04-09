@@ -61,17 +61,17 @@ And [atx] (http://www.aaronsw.com/2002/atx/) mode.
 
 - supports writing to files, returns contents of the directory, and allows users to process by themselves
 
-
 - support multi-threads for directory files.
 
 - support i18n
 
+- support gen toc number
 
 # environmental dependence
 
 ## the JDK
 
-JDK7+, make sure the JDK is set up correctly.
+JDK8+, make sure the JDK is set up correctly.
 
 ## Maven
 
@@ -132,6 +132,7 @@ AtxMarkdownToc.newInstance()
 | 1 | charset | `UTF-8` | file charset | 
 | 2 | write | `true` | will toc written to the file (default write) | 
 | 3 | subTree | `true` | does it include subfolders(default includes) | 
+| 3 | order | `false` | does it gen toc order num(default false, since 1.0.5) | 
 
 
 ## return value description

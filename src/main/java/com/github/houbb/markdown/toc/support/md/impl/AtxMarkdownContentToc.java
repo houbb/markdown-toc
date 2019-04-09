@@ -10,15 +10,13 @@ import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
 import com.github.houbb.markdown.toc.support.md.MarkdownContentToc;
 import com.github.houbb.markdown.toc.util.CollectionUtil;
+import com.github.houbb.markdown.toc.util.StringUtil;
 import com.github.houbb.markdown.toc.vo.TocVo;
 
 import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.apiguardian.api.API;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * <p> ATX 根据内容返回目录 </p>
@@ -65,20 +63,16 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
     //endregion
 
     @Override
-    public List<String> getTocLines(List<String> contentLines, boolean trimToc) {
+    public List<String> getPureTocList(List<String> contentLines) {
         if (CollectionUtil.isEmpty(contentLines)) {
             return Collections.emptyList();
         }
 
-        if(trimToc) {
-            List<String> actualLines = trimToc(contentLines);
-            return buildTocList(actualLines);
-        }
         return buildTocList(contentLines);
     }
 
     @Override
-    public List<String> trimToc(List<String> contentLines) {
+    public List<String> getPureContentList(List<String> contentLines) {
         List<String> resultList = new LinkedList<>(contentLines);
 
         //原先的目录过滤
@@ -152,34 +146,72 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
 
     /**
      * 显示toc
-     *
+     * v1.0.5 开始支持编号，此处默认从1开始。
      * @param tocVoList toc值对象列表
      */
     private void showToc(List<TocVo> tocVoList) {
-        if (tocStrList.isEmpty()) {
+        if (tocStrList.isEmpty()
+            || CollectionUtil.isEmpty(tocVoList)) {
             return;
         }
+        //v1.0.5 添加编号支持
         for (TocVo tocVo : tocVoList) {
-            String suffix = getSuffix(tocVo.getLevel());
-            String tocVoContent = suffix + String.format(TocConstant.TOC_FORMAT,
-                    tocVo.getTocTitle(), tocVo.getTocHref());
+            this.fillTocVo(tocVo);
+            final String intent = tocVo.getIndent();
+            String tocVoContent = intent + String.format(TocConstant.TOC_FORMAT,
+                    tocVo.getOrderDesc(), tocVo.getTocTitle(), tocVo.getTocHref());
             resultList.add(tocVoContent);
             showToc(tocVo.getChildren());
         }
     }
 
     /**
-     * 得到后缀
-     *
-     * @param level 水平
-     * @return java.lang.String
+     * 填充信息
+     * @param tocVo 原始对象
      */
-    private String getSuffix(int level) {
-        StringBuilder result = new StringBuilder();
+    private void fillTocVo(TocVo tocVo) {
+        final int level = tocVo.getLevel();
+
+        //1. 前缀空格信息处理
+        StringBuilder prefixBuilder = new StringBuilder();
         for (int i = 0; i < level - 1; i++) {
-            result.append(TocConstant.TWO_BLANK);
+            prefixBuilder.append(TocConstant.TWO_BLANK);
         }
-        return result.toString();
+        tocVo.setIndent(prefixBuilder.toString());
+
+        //2. 编号处理
+        if(config.isOrder()) {
+            // 递归获取对应的编号信息
+            String orderDesc = buildOrderDesc(tocVo);
+            tocVo.setOrderDesc(orderDesc);
+        } else {
+            tocVo.setOrderDesc(StringUtil.EMPTY);
+        }
+    }
+
+    /**
+     * 递归获取顺序描述
+     * 1. 依次获取父类的 order，放在一个列表中。
+     * 2. 终止的条件是当父类为 root
+     * 3. 列表最后 reverse+用点连接起来。
+     * @param tocVo 信息
+     * @return 结果
+     * @since 1.0.5
+     */
+    private String buildOrderDesc(final TocVo tocVo) {
+        List<Integer> orderList = new ArrayList<>();
+        orderList.add(tocVo.getOrder());
+
+        TocVo current = tocVo;
+        while(current.getLevel() >= 1) {
+            current = current.getParent();
+            if(current.getLevel() >= 1) {
+                orderList.add(current.getOrder());
+            }
+        }
+
+        Collections.reverse(orderList);
+        return CollectionUtil.join(orderList, TocConstant.DOT)+StringUtil.BLANK;
     }
 
     /**
@@ -220,6 +252,11 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
             current.setParent(previous);
             previous.getChildren().add(current);
         }
+        // 统一设置 order 信息 1.0.5
+        // 编号的下标从1开始
+        TocVo parentToc = current.getParent();
+        List<TocVo> childrenList = parentToc.getChildren();
+        current.setOrder(childrenList.size());
 
         previous = current;
     }

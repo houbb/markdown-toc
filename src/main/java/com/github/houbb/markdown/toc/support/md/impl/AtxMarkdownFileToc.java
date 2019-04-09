@@ -58,17 +58,17 @@ public class AtxMarkdownFileToc implements MarkdownFileToc {
             }
 
             //2. 获取 toc 列表
-            //TODO: 生成对应的 order 编号
             List<String> contentList = Files.readAllLines(path, config.getCharset());
-            List<String> trimTocContentList = markdownContentToc.trimToc(contentList);
-            List<String> tocList = markdownContentToc.getTocLines(trimTocContentList, false);
-
-            List<String> resultList = new ArrayList<>(tocList);
-            resultList.addAll(contentList);
+            List<String> trimTocContentList = markdownContentToc.getPureContentList(contentList);
+            List<String> tocList = markdownContentToc.getPureTocList(trimTocContentList);
 
             //3. 回写
             TocGen tocGen = new TocGen(path.toString(), tocList);
             if(config.isWrite()) {
+                // 构建新的回写内容
+                List<String> resultList = new ArrayList<>(tocList);
+                resultList.addAll(trimTocContentList);
+
                 Files.write(path, resultList, config.getCharset());
             }
             return tocGen;
