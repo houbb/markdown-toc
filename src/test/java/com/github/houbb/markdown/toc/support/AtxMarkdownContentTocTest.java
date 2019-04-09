@@ -52,7 +52,8 @@ public class AtxMarkdownContentTocTest {
     @Test
     public void emptyContentTest() {
         List<String> lines = getLines("empty-content.md");
-        List<String> tocs = markdownContentToc.getPureTocList(lines);
+        List<String> pureLines = markdownContentToc.getPureContentList(lines);
+        List<String> tocs = markdownContentToc.getPureTocList(pureLines);
         Assert.assertTrue(CollectionUtil.isEmpty(tocs));
     }
 
