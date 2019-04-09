@@ -2,8 +2,8 @@
 echo "============================= RELEASE START..."
 
 ## 版本号信息(需要手动指定)
-oldVersion="1.0.4"
-newVersion="1.0.4"
+oldVersion="1.0.6"
+newVersion="1.0.6"
 projectName="markdown-toc"
 
 # 删除分支
