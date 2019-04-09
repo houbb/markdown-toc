@@ -36,7 +36,7 @@ public final class TocConstant {
     /**
      * TOC 格式化
      */
-    public static final String TOC_FORMAT = "* [%s](%s)";
+    public static final String TOC_FORMAT = "* %s[%s](%s)";
 
     /**
      * 默认的 toc 开头
@@ -47,5 +47,10 @@ public final class TocConstant {
      * 通用换行符
      */
     public static final String RETURN_LINE = System.getProperty("line.separator");
+
+    /**
+     * 点
+     */
+    public static final String DOT = ".";
 
 }

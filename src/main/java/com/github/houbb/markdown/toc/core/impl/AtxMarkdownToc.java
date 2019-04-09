@@ -53,6 +53,12 @@ public class AtxMarkdownToc implements MarkdownToc {
      * 是否写入到文件(默认写入)
      */
     private boolean write = true;
+
+    /**
+     * 是否添加 order 编号(默认没有编号)
+     * @since 1.0.5
+     */
+    private boolean order = false;
     //endregion
 
     @Override
@@ -68,7 +74,12 @@ public class AtxMarkdownToc implements MarkdownToc {
      * @return 配置信息
      */
     private TocConfig buildConfig() {
-        return new TocConfig(charset, subTree, write);
+        TocConfig tocConfig = new TocConfig();
+        tocConfig.setCharset(charset);
+        tocConfig.setSubTree(subTree);
+        tocConfig.setWrite(write);
+        tocConfig.setOrder(this.order);
+        return tocConfig;
     }
 
     @Override
@@ -99,6 +110,7 @@ public class AtxMarkdownToc implements MarkdownToc {
         }
 
         //3. 多个文件多线程生成
+        //TODO: 后期统一使用 Async 框架
         ExecutorService executorService = Executors.newFixedThreadPool(bestThreadNum);
 
         List<Future<TocGen>> futureTasks = new ArrayList<>();
@@ -162,6 +174,16 @@ public class AtxMarkdownToc implements MarkdownToc {
      */
     public AtxMarkdownToc write(final boolean write) {
         this.write = write;
+        return this;
+    }
+
+    /**
+     * 设置是否设置编号
+     * @param order 编号
+     * @return this
+     */
+    public AtxMarkdownToc order(final boolean order) {
+        this.order = order;
         return this;
     }
 

@@ -46,3 +46,8 @@
 | 1 | A | Add API version | 2018-08-15 17:44:24 |
 | 2 | A | Generate toc by content list  | 2018-08-15 17:44:24 |
 
+# release_1.0.5
+
+| serial number | change type | means | time | note |
+|:---|:---|:---|:---|:--|
+| 1 | A | Add toc order gen support | 2019-4-9 15:47:03 |

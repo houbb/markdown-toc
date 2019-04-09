@@ -26,4 +26,10 @@ public final class VersionConstant {
 
     public static final String V_1_0_4 = "1.0.4";
 
+    /**
+     * 版本常量
+     * @since 1.0.5
+     */
+    public static final String V_1_0_5 = "1.0.5";
+
 }

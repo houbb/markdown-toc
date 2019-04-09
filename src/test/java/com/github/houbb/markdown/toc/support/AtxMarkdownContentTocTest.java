@@ -11,6 +11,7 @@ import com.github.houbb.markdown.toc.util.CollectionUtil;
 import com.github.houbb.markdown.toc.util.FileUtil;
 import com.github.houbb.markdown.toc.util.TestPathUtil;
 
+import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,34 +38,36 @@ public class AtxMarkdownContentTocTest {
 
     @Before
     public void before() {
-        markdownContentToc = new AtxMarkdownContentToc();
+        TocConfig config = new TocConfig();
+        markdownContentToc = new AtxMarkdownContentToc(config);
     }
 
     @Test
     public void emptyTest() {
         List<String> lines = getLines("empty.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         Assert.assertTrue(CollectionUtil.isEmpty(tocs));
     }
 
     @Test
     public void emptyContentTest() {
         List<String> lines = getLines("empty-content.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> pureLines = markdownContentToc.getPureContentList(lines);
+        List<String> tocs = markdownContentToc.getPureTocList(pureLines);
         Assert.assertTrue(CollectionUtil.isEmpty(tocs));
     }
 
     @Test
     public void commonTest() {
         List<String> lines = getLines("common.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         showTocs(tocs);
     }
 
     @Test
     public void nLevelTest() {
         List<String> lines = getLines("N-LEVEL.md");
-        List<String> tocs = markdownContentToc.getTocLines(lines, true);
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
         showTocs(tocs);
     }
 

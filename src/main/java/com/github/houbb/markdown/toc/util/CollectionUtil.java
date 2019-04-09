@@ -10,6 +10,7 @@ import com.github.houbb.markdown.toc.constant.VersionConstant;
 import org.apiguardian.api.API;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * <p> 集合工具类 </p>
@@ -45,4 +46,26 @@ public final class CollectionUtil {
     public static boolean isNotEmpty(Collection collection) {
         return !isEmpty(collection);
     }
+
+    /**
+     * @since 1.0.5
+     * @param objects 对象
+     * @param separator 分隔符
+     * @return 拼接的结果
+     */
+    public static String join(final List<?> objects, final String separator) {
+        if(CollectionUtil.isEmpty(objects)) {
+            return StringUtil.EMPTY;
+        }
+
+        //null 使用空格代替  避免NPE，也让根据 _ 分割时不存在问题。
+        final String firstStr = objects.get(0).toString();
+        StringBuilder stringBuilder = new StringBuilder(firstStr);
+        for(int i = 1; i < objects.size(); i++){
+            String actualStr = objects.get(i).toString();
+            stringBuilder.append(separator).append(actualStr);
+        }
+        return stringBuilder.toString();
+    }
+
 }

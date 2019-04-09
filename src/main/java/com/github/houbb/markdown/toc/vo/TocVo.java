@@ -58,6 +58,24 @@ public class TocVo {
     private final IncreaseMap increaseMap;
 
     /**
+     * 编号序号
+     * @since 1.0.5
+     */
+    private int order;
+
+    /**
+     * 编号序号
+     * @since 1.0.5
+     */
+    private String orderDesc;
+
+    /**
+     * 空格缩进
+     * @since 1.0.5
+     */
+    private String indent;
+
+    /**
      *  toc值对象
      *
      * @param origin 起源
@@ -202,5 +220,29 @@ public class TocVo {
      */
     public void setParent(TocVo parent) {
         this.parent = parent;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
+    public String getOrderDesc() {
+        return orderDesc;
+    }
+
+    public void setOrderDesc(String orderDesc) {
+        this.orderDesc = orderDesc;
+    }
+
+    public String getIndent() {
+        return indent;
+    }
+
+    public void setIndent(String indent) {
+        this.indent = indent;
     }
 }

@@ -23,18 +23,20 @@ import java.util.List;
 public interface MarkdownContentToc {
 
     /**
-     * 生成单个文件的 toc
+     * 获取纯净的 toc 列表
      * @param contentLines 文件内容
-     * @param trimToc 是否过滤 toc
      * @return 生成的结果信息
+     * @since 1.0.5 调整接口名称
      */
-    List<String> getTocLines(final List<String> contentLines, boolean trimToc);
+    List<String> getPureTocList(final List<String> contentLines);
 
     /**
-     * 获取过滤掉 toc 的内容
+     * 获取纯净的内容列表。
+     * 1. 排除掉 toc 信息
      * @param contentLines 原始内容
      * @return 过滤掉 toc 后的内容列表
+     * @since 1.0.5 调整接口名称
      */
-    List<String> trimToc(final List<String> contentLines);
+    List<String> getPureContentList(final List<String> contentLines);
 
 }

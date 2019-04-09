@@ -17,6 +17,11 @@ public final class StringUtil {
      * 空白字符串
      */
     public static final String EMPTY = "";
+    /**
+     * 空格
+     * @since 1.0.5
+     */
+    public static final String BLANK = " ";
 
     /**
      * 是否为空

@@ -2,8 +2,8 @@
 echo "============================= RELEASE START..."
 
 ## 版本号信息(需要手动指定)
-version="1.0.4"
-newVersion="1.0.5"
+version="1.0.5"
+newVersion="1.0.6"
 projectName="markdown-toc"
 
 # release 项目版本
