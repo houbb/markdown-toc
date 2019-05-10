@@ -78,7 +78,11 @@ Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面�
 
 ## JDK 
 
-JDK8+, 请确保 JDK 设置正确。
+1.0.5 及其以前为 jdk8 编译, 请确保 JDK 设置正确。
+
+1.0.6 版本使用 jdk7 编译上传。
+
+后续 1.XX 版本都将支持 jkd7，更便于使用。
 
 ## Maven
 
