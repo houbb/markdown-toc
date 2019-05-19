@@ -82,7 +82,7 @@ Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面�
 
 1.0.6 版本使用 jdk7 编译上传。
 
-后续 1.XX 版本都将支持 jkd7，更便于使用。
+后续 1.XX 版本都将支持 jdk7，更便于使用。
 
 ## Maven
 
