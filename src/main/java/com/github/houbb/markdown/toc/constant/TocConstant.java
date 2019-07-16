@@ -19,6 +19,12 @@ public final class TocConstant {
     public static final String TWO_BLANK = "  ";
 
     /**
+     * 四个空格
+     * @since 1.0.7
+     */
+    public static final String FOUR_BLANK = "    ";
+
+    /**
      * 井号
      */
     public static final String ASTERISK = "#";
@@ -52,5 +58,21 @@ public final class TocConstant {
      * 点
      */
     public static final String DOT = ".";
+
+    /**
+     * markdown 代码块开始
+     *
+     * 示例：
+     * ```
+     * 代码块
+     * ```
+     * or
+     *
+     * ```c
+     * 代码块
+     * ```
+     * @since 1.0.7
+     */
+    public static final String MD_CODE_BLOCK = "```";
 
 }

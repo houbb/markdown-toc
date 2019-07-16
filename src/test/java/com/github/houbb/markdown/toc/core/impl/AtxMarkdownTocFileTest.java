@@ -4,6 +4,7 @@ import com.github.houbb.markdown.toc.core.MarkdownToc;
 import com.github.houbb.markdown.toc.util.TestPathUtil;
 import com.github.houbb.markdown.toc.vo.TocGen;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -23,7 +24,8 @@ public class AtxMarkdownTocFileTest {
         String path = TestPathUtil.getAppRootPath("common.md");
         TocGen tocGen = AtxMarkdownToc.newInstance()
                 .genTocFile(path);
-        System.out.println(tocGen);
+
+        Assert.assertEquals(8, tocGen.getTocLines().size());
     }
 
     /**
@@ -35,7 +37,8 @@ public class AtxMarkdownTocFileTest {
 
         MarkdownToc markdownToc = new AtxMarkdownToc();
         TocGen tocGen = markdownToc.genTocFile(path);
-        System.out.println(tocGen);
+
+        Assert.assertEquals(8, tocGen.getTocLines().size());
     }
 
     /**
@@ -44,8 +47,10 @@ public class AtxMarkdownTocFileTest {
     @Test
     public void chineseFileNameTest() {
         String path = TestPathUtil.getAppRootPath("中文名称.md");
-        AtxMarkdownToc.newInstance()
+        TocGen tocGen = AtxMarkdownToc.newInstance()
                 .genTocFile(path);
+
+        Assert.assertEquals(10, tocGen.getTocLines().size());
     }
 
     /**
@@ -54,9 +59,11 @@ public class AtxMarkdownTocFileTest {
     @Test
     public void charsetGbkTest() {
         String path = TestPathUtil.getAppRootPath("README-GBK.md");
-        AtxMarkdownToc.newInstance()
+        TocGen tocGen = AtxMarkdownToc.newInstance()
                 .charset("GBK")
                 .genTocFile(path);
+
+        Assert.assertEquals(13, tocGen.getTocLines().size());
     }
 
     /**
@@ -70,7 +77,7 @@ public class AtxMarkdownTocFileTest {
                 .write(false)
                 .genTocFile(path);
 
-        System.out.println(tocGen);
+        Assert.assertEquals(8, tocGen.getTocLines().size());
     }
 
     /**
@@ -84,7 +91,7 @@ public class AtxMarkdownTocFileTest {
                 .order(true)
                 .genTocFile(path);
 
-        System.out.println(tocGen);
+        Assert.assertEquals(8, tocGen.getTocLines().size());
     }
 
     /**
@@ -97,7 +104,7 @@ public class AtxMarkdownTocFileTest {
         TocGen tocGen = AtxMarkdownToc.newInstance()
                 .genTocFile(path);
 
-        System.out.println(tocGen);
+        Assert.assertEquals(21, tocGen.getTocLines().size());
     }
 
     /**
@@ -111,7 +118,22 @@ public class AtxMarkdownTocFileTest {
                 .order(true)
                 .genTocFile(path);
 
-        System.out.println(tocGen);
+        Assert.assertEquals(17, tocGen.getTocLines().size());
+    }
+
+    /**
+     * 代码块测试
+     * @since 1.0.7
+     */
+    @Test
+    public void codeBlockTest() {
+        String path = TestPathUtil.getAppRootPath("CODE_BLOCK.md");
+
+        TocGen tocGen = AtxMarkdownToc.newInstance()
+                .order(true)
+                .genTocFile(path);
+
+        Assert.assertEquals(15, tocGen.getTocLines().size());
     }
 
     /**

@@ -51,3 +51,17 @@
 | serial number | change type | means | time | note |
 |:---|:---|:---|:---|:--|
 | 1 | A | Add toc order gen support | 2019-4-9 15:47:03 |
+
+# release_1.0.6
+
+| serial number | change type | means | time | note |
+|:---|:---|:---|:---|:--|
+| 1 | A | Compile code by jdk7. | 2019-4-9 15:47:03 |
+
+
+# release_1.0.7
+
+| 序号 | 变更类型 | 说明 | 时间 | 备注 |
+|:---|:---|:---|:---|:--|
+| 1 | O | Optimize the test case. | 2019-7-16 15:03:57 |
+| 2 | F | Fixed bug: get # as head from code block. | 2019-7-16 15:03:57 |
