@@ -8,6 +8,8 @@ package com.github.houbb.markdown.toc.support.md.impl;
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
+import com.github.houbb.markdown.toc.support.codeblock.ICodeBlock;
+import com.github.houbb.markdown.toc.support.codeblock.impl.AtxCodeBlock;
 import com.github.houbb.markdown.toc.support.md.MarkdownContentToc;
 import com.github.houbb.markdown.toc.util.CollectionUtil;
 import com.github.houbb.markdown.toc.util.StringUtil;
@@ -103,7 +105,7 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
 
     /**
      * 构建目录列表
-     *
+     * v1.0.7 修复 bug：当 # 放在代码块中，则不认为是标题信息。
      * @param contentList 内容列表
      * @return 目录列表
      */
@@ -116,7 +118,14 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
         resultList.add(TocConstant.DEFAULT_TOC_HEAD + TocConstant.RETURN_LINE);
 
         //2. 所有 toc 行
+        ICodeBlock codeBlock = AtxCodeBlock.newInstance();
         for (String string : contentList) {
+            // 是否为代码块的处理
+            codeBlock.put(string);
+            if(codeBlock.isCodeBlock()) {
+                continue;
+            }
+
             String trim = string.trim();
             if (trim.startsWith(TocConstant.ASTERISK)) {
                 tocStrList.add(trim);

@@ -61,6 +61,8 @@ public class AtxMarkdownContentTocTest {
     public void commonTest() {
         List<String> lines = getLines("common.md");
         List<String> tocs = markdownContentToc.getPureTocList(lines);
+
+        Assert.assertEquals(9, tocs.size());
         showTocs(tocs);
     }
 
@@ -68,6 +70,20 @@ public class AtxMarkdownContentTocTest {
     public void nLevelTest() {
         List<String> lines = getLines("N-LEVEL.md");
         List<String> tocs = markdownContentToc.getPureTocList(lines);
+
+        Assert.assertEquals(22, tocs.size());
+        showTocs(tocs);
+    }
+
+    /**
+     * 代码块测试
+     * @since 1.0.7
+     */
+    @Test
+    public void codeBlockTest() {
+        List<String> lines = getLines("CODE_BLOCK.md");
+        List<String> tocs = markdownContentToc.getPureTocList(lines);
+
         showTocs(tocs);
     }
 

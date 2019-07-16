@@ -5,13 +5,10 @@
 
 package com.github.houbb.markdown.toc.core.impl;
 
-import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.util.TestPathUtil;
-import com.github.houbb.markdown.toc.vo.TocGen;
-
+import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -31,8 +28,9 @@ public class AtxMarkdownI18NTest {
             AtxMarkdownToc.newInstance()
                     .genTocDir(path);
         } catch (Exception e) {
+            final String expectedMsg = "D:\\github\\markdown-toc/src/test/resources/subNotExists path is not a directory";
             final String msg = e.getMessage();
-            System.out.println(msg);
+            Assert.assertEquals(expectedMsg, msg);
         }
     }
 
@@ -44,8 +42,9 @@ public class AtxMarkdownI18NTest {
             AtxMarkdownToc.newInstance()
                     .genTocDir(path);
         } catch (Exception e) {
+            final String expectedMsg = "D:\\github\\markdown-toc/src/test/resources/subNotExists 文件路径必须是文件夹";
             final String msg = e.getMessage();
-            System.out.println(msg);
+            Assert.assertEquals(expectedMsg, msg);
         }
     }
 

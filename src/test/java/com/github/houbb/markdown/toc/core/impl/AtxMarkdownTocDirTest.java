@@ -8,6 +8,7 @@ package com.github.houbb.markdown.toc.core.impl;
 import com.github.houbb.markdown.toc.util.TestPathUtil;
 import com.github.houbb.markdown.toc.vo.TocGen;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -31,7 +32,8 @@ public class AtxMarkdownTocDirTest {
                 .subTree(false)
                 .genTocDir(path);
 
-        System.out.println(tocGens.size());
+        final int size = tocGens.size();
+        Assert.assertEquals(2, size);
     }
 
     /**
@@ -45,11 +47,12 @@ public class AtxMarkdownTocDirTest {
                 .write(false)
                 .genTocDir(path);
 
-        System.out.println(tocGens.size());
+        final int size = tocGens.size();
+        Assert.assertEquals(0, size);
     }
 
     /**
-     * 无 md 文件测试
+     * 单 md 文件测试
      */
     @Test
     public void oneMdTest() {
@@ -59,7 +62,8 @@ public class AtxMarkdownTocDirTest {
                 .write(false)
                 .genTocDir(path);
 
-        System.out.println(tocGens.size());
+        final int size = tocGens.size();
+        Assert.assertEquals(1, size);
     }
 
     /**
@@ -71,7 +75,8 @@ public class AtxMarkdownTocDirTest {
         String path = TestPathUtil.getAppRootPath("sub");
         List<TocGen> tocGens = AtxMarkdownToc.newInstance()
                 .genTocDir(path);
-        System.out.println(tocGens.size());
+        final int size = tocGens.size();
+        Assert.assertEquals(6, size);
     }
 
 }
