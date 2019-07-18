@@ -1,26 +1,11 @@
 package com.github.houbb.markdown.toc.util;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.Set;
-
+/**
+ * 特殊字符测试
+ * @since 1.0.8
+ */
 public class SpecialCharUtilTest {
 
-    @Test
-    public void getSpecialCharSetTest() {
-        Set<String> stringSet = SpecialCharUtil.getSpecialCharSet();
-        Assert.assertFalse(stringSet.isEmpty());
-    }
 
-    @Test
-    public void buildSpecialTitle() {
-        Set<String> stringSet = SpecialCharUtil.getSpecialCharSet();
-        final String format = "# ILOVEMD%sILOVEMD\n" +
-                "ILOVEMD%sILOVEMD\n";
-        for(String string : stringSet) {
-            System.out.println(String.format(format, string, string));
-        }
-    }
 
 }

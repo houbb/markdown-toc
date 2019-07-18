@@ -79,4 +79,15 @@ public class AtxMarkdownTocDirTest {
         Assert.assertEquals(6, size);
     }
 
+    /**
+     * 特殊符号测试
+     */
+    @Test
+    public void specialTest() {
+        String path = TestPathUtil.getAppRootPath("special");
+        List<TocGen> tocGens = AtxMarkdownToc.newInstance()
+                .subTree(true)
+                .genTocDir(path);
+    }
+
 }

@@ -27,6 +27,11 @@ import org.apiguardian.api.API;
 public class ThreadLocalUtil {
 
     /**
+     * @since 1.0.8
+     */
+    private ThreadLocalUtil(){}
+
+    /**
      * 用于保存当前线程的信息
      */
     private static final ThreadLocal<MarkdownFileToc> FILE_TOC_THREAD_LOCAL = new ThreadLocal<>();

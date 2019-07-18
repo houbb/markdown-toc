@@ -40,6 +40,12 @@ public final class TocConstant {
     public static final String MINUS = "-";
 
     /**
+     * 减号字符
+     * @since 1.0.8
+     */
+    public static final char MINUS_CHAR = '-';
+
+    /**
      * TOC 格式化
      */
     public static final String TOC_FORMAT = "* %s[%s](%s)";

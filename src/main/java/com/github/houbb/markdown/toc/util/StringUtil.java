@@ -13,6 +13,8 @@ import org.apiguardian.api.API;
 @API(status = API.Status.MAINTAINED, since = VersionConstant.V_1_0_0)
 public final class StringUtil {
 
+    private StringUtil(){}
+
     /**
      * 空白字符串
      */

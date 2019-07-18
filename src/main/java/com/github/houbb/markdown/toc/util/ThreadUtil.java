@@ -20,6 +20,11 @@ import org.apiguardian.api.API;
 public final class ThreadUtil {
 
     /**
+     * @since 1.0.8
+     */
+    private ThreadUtil(){}
+
+    /**
      * 获取 cpu 数量
      * @return cpu 数量
      */

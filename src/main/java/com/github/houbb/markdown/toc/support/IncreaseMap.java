@@ -58,11 +58,7 @@ public class IncreaseMap {
         result = result.replace(' ', '-');
 
         //3. 对于特殊字符的处理
-        for(String specialChar : SpecialCharUtil.getSpecialCharSet()) {
-            result = result.replace(specialChar, "");
-        }
-
-        return result;
+        return SpecialCharUtil.filterSpecial(result);
     }
 
 }
