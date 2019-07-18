@@ -51,6 +51,7 @@ public final class SpecialCharUtil {
         }
 
         // 替换掉表情
+        // github 部分表情是不一致的，暂时不做处理。
         String trimEmoji = string.replaceAll(EMOJI_PATTERN_STR, StringUtil.EMPTY);
 
         // 处理每一个字节
@@ -58,8 +59,9 @@ public final class SpecialCharUtil {
         StringBuilder stringBuilder = new StringBuilder();
         for(char c : chars) {
             String cStr = String.valueOf(c);
-            //1.- 直接添加
-            if(TocConstant.MINUS.equals(cStr)) {
+            //1.-_ 直接添加
+            if(TocConstant.MINUS.equals(cStr)
+                || TocConstant.UNDERLINE.equals(cStr)) {
                 stringBuilder.append(c);
                 continue;
             }
