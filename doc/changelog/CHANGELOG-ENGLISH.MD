@@ -65,3 +65,9 @@
 |:---|:---|:---|:---|:--|
 | 1 | O | Optimize the test case. | 2019-7-16 15:03:57 |
 | 2 | F | Fixed bug: get # as head from code block. | 2019-7-16 15:03:57 |
+
+# release_1.0.8
+
+| 序号 | 变更类型 | 说明 | 时间 | 备注 |
+|:---|:---|:---|:---|:--|
+| 2 | F | Fixed bug: the github link of special char head  | 2019-7-18 17:48:32 | emoji has bugs |
