@@ -74,9 +74,9 @@ Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面�
 
 - 支持目录编号生成(1.0.5)
 
-## v1.0.8 更新日志
+## v1.1.0 字符串列表
 
-1. 优化 github 对应的链接地址，修复中文符号 BUG
+1. 支持直接根据字符串列表返回对应的 tocList
 
 # 环境依赖
 
@@ -102,6 +102,46 @@ Jar 使用 [Maven](http://maven.apache.org/) 进行统一管理。
     <artifactId>markdown-toc</artifactId>
     <version>${maven-version}</version>
 </dependency>
+```
+
+## 字符串列表
+
+v1.1.0 支持，`MdTocTextHelper#getTocList()` 返回对应的 toc 列表。
+
+### 默认
+
+最简单的使用方式，指定 md 格式的字符串列表。
+
+```java
+List<String> lines = new ArrayList<>();
+lines.add("# 标题1");
+lines.add("这是一行内容");
+lines.add("# 标题2");
+lines.add("这也是一行内容");
+
+List<String> tocList = MdTocTextHelper.getTocList(lines);
+```
+
+返回如下：
+
+```
+* [标题1](#标题1)
+* [标题2](#标题2)
+```
+
+### 指定序号 
+
+当然，你也可以指定显示编号。
+
+```java
+List<String> tocList = MdTocTextHelper.getTocList(lines, true);
+```
+
+返回如下：
+
+```
+* 1 [标题1](#标题1)
+* 2 [标题2](#标题2)
 ```
 
 ## md 文件
