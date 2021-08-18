@@ -1,6 +1,5 @@
 package com.github.houbb.markdown.toc.util;
 
-import com.github.houbb.heaven.util.util.CollectionUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class MdTocTextHelperTest {
         lines.add("这也是一行内容");
 
         List<String> tocList = MdTocTextHelper.getTocList(lines);
-        CollectionUtil.foreachPrint(tocList);
+        foreachPrint(tocList);
     }
 
     @Test
@@ -34,7 +33,19 @@ public class MdTocTextHelperTest {
         lines.add("这也是一行内容");
 
         List<String> tocList = MdTocTextHelper.getTocList(lines, true);
-        CollectionUtil.foreachPrint(tocList);
+        foreachPrint(tocList);
+    }
+
+    /**
+     * 循环处理集合
+     *
+     * @param tocList 集合
+     * @since 0.1.93
+     */
+    public static void foreachPrint(List<String> tocList) {
+        for(String toc : tocList) {
+            System.out.println(toc);
+        }
     }
 
 }
