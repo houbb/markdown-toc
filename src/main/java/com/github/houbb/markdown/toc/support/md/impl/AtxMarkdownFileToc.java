@@ -5,12 +5,12 @@
 
 package com.github.houbb.markdown.toc.support.md.impl;
 
+import com.github.houbb.heaven.util.io.FileUtil;
 import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.support.I18N;
 import com.github.houbb.markdown.toc.support.md.MarkdownContentToc;
 import com.github.houbb.markdown.toc.support.md.MarkdownFileToc;
-import com.github.houbb.markdown.toc.util.FileUtil;
 import com.github.houbb.markdown.toc.vo.TocGen;
 import com.github.houbb.markdown.toc.vo.config.TocConfig;
 

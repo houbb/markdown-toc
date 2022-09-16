@@ -1,20 +1,22 @@
 package com.github.houbb.markdown.toc.core.impl;
 
+import com.github.houbb.heaven.util.io.FileUtil;
+import com.github.houbb.heaven.util.lang.StringUtil;
+import com.github.houbb.heaven.util.lang.ThreadUtil;
+import com.github.houbb.heaven.util.util.CollectionUtil;
+import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.core.MarkdownToc;
 import com.github.houbb.markdown.toc.exception.MarkdownTocRuntimeException;
 import com.github.houbb.markdown.toc.support.I18N;
-import com.github.houbb.markdown.toc.util.CollectionUtil;
-import com.github.houbb.markdown.toc.util.FileUtil;
-import com.github.houbb.markdown.toc.util.StringUtil;
 import com.github.houbb.markdown.toc.util.ThreadLocalUtil;
-import com.github.houbb.markdown.toc.util.ThreadUtil;
 import com.github.houbb.markdown.toc.vo.TocGen;
 import com.github.houbb.markdown.toc.vo.config.TocConfig;
 
 import org.apiguardian.api.API;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,7 +44,7 @@ public class AtxMarkdownToc implements MarkdownToc {
     /**
      * 编码(默认为utf-8)
      */
-    private Charset charset = Charset.forName("UTF-8");
+    private Charset charset = StandardCharsets.UTF_8;
 
     /**
      * 是否包含子文件夹下的文件(默认为包含)
@@ -59,6 +61,12 @@ public class AtxMarkdownToc implements MarkdownToc {
      * @since 1.0.5
      */
     private boolean order = false;
+
+    /**
+     * toc 表头信息
+     * @since 1.2.0
+     */
+    private String tocHead = TocConstant.DEFAULT_TOC_HEAD;
     //endregion
 
     @Override
@@ -79,6 +87,7 @@ public class AtxMarkdownToc implements MarkdownToc {
         tocConfig.setSubTree(subTree);
         tocConfig.setWrite(write);
         tocConfig.setOrder(this.order);
+        tocConfig.setTocHead(this.tocHead);
         return tocConfig;
     }
 
@@ -184,6 +193,16 @@ public class AtxMarkdownToc implements MarkdownToc {
      */
     public AtxMarkdownToc order(final boolean order) {
         this.order = order;
+        return this;
+    }
+
+    /**
+     * 设置 toc 表头
+     * @param tocHead 编号
+     * @return this
+     */
+    public AtxMarkdownToc tocHead(final String tocHead) {
+        this.tocHead = tocHead;
         return this;
     }
 

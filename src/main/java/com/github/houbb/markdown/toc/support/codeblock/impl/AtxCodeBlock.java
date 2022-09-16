@@ -1,8 +1,8 @@
 package com.github.houbb.markdown.toc.support.codeblock.impl;
 
+import com.github.houbb.heaven.util.lang.StringUtil;
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.support.codeblock.ICodeBlock;
-import com.github.houbb.markdown.toc.util.StringUtil;
 
 import java.util.Stack;
 

@@ -100,13 +100,13 @@ Jar 使用 [Maven](http://maven.apache.org/) 进行统一管理。
 <dependency>
     <groupId>com.github.houbb</groupId>
     <artifactId>markdown-toc</artifactId>
-    <version>${maven-version}</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
 ## 字符串列表
 
-v1.1.0 支持，`MdTocTextHelper#getTocList()` 返回对应的 toc 列表。
+v1.2.0 支持自定义 tocHead 信息。
 
 ### 默认
 
@@ -179,12 +179,13 @@ AtxMarkdownToc.newInstance()
 
 ## 属性说明 
 
-| 序号 | 属性 | 默认值 |  说明 |
-|:----|:----|:----|:----|
-| 1 | charset | `UTF-8` | 文件编码 | 
-| 2 | write | `true` | 是否将 toc 写入文件(默认写入) | 
-| 3 | subTree | `true` | 是否包含子文件夹的文件(默认包含) | 
-| 4 | order | `false` | 是否生成目录编号(默认不生成，1.0.5以后) | 
+| 序号  | 属性      | 默认值 | 说明                      |
+|:----|:--------|:----|:------------------------|
+| 1   | charset | `UTF-8` | 文件编码                    | 
+| 2   | write   | `true` | 是否将 toc 写入文件(默认写入)      | 
+| 3   | subTree | `true` | 是否包含子文件夹的文件(默认包含)       | 
+| 4   | order   | `false` | 是否生成目录编号(默认不生成，1.0.5以后) |
+| 5   | tocHead | `# Table of Contents` | 自定义 toc 的头信息            |
 
 ## 返回值说明
 

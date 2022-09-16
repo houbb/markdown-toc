@@ -5,16 +5,15 @@
 
 package com.github.houbb.markdown.toc.support.md.impl;
 
+import com.github.houbb.heaven.util.lang.StringUtil;
+import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.constant.VersionConstant;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
 import com.github.houbb.markdown.toc.support.codeblock.ICodeBlock;
 import com.github.houbb.markdown.toc.support.codeblock.impl.AtxCodeBlock;
 import com.github.houbb.markdown.toc.support.md.MarkdownContentToc;
-import com.github.houbb.markdown.toc.util.CollectionUtil;
-import com.github.houbb.markdown.toc.util.StringUtil;
 import com.github.houbb.markdown.toc.vo.TocVo;
-
 import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.apiguardian.api.API;
 
@@ -79,7 +78,7 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
 
         //原先的目录过滤
         String firstLine = resultList.get(0);
-        if (firstLine.startsWith(TocConstant.DEFAULT_TOC_HEAD)) {
+        if (firstLine.startsWith(this.config.getTocHead())) {
             Iterator<String> stringIterator = resultList.iterator();
             //开头
             nextAndRemove(stringIterator, 2);
@@ -115,7 +114,10 @@ public class AtxMarkdownContentToc implements MarkdownContentToc {
         }
 
         //1. ATX 默认文件头
-        resultList.add(TocConstant.DEFAULT_TOC_HEAD + TocConstant.RETURN_LINE);
+        String tocHead = config.getTocHead();
+        if (StringUtil.isNotEmpty(tocHead)) {
+            resultList.add(tocHead + TocConstant.RETURN_LINE);
+        }
 
         //2. 所有 toc 行
         ICodeBlock codeBlock = AtxCodeBlock.newInstance();

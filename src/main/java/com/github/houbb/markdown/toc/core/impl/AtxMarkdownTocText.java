@@ -1,13 +1,13 @@
 package com.github.houbb.markdown.toc.core.impl;
 
+import com.github.houbb.heaven.util.lang.StringUtil;
+import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.core.IMarkdownTocText;
 import com.github.houbb.markdown.toc.core.MarkdownTocTextContext;
 import com.github.houbb.markdown.toc.support.IncreaseMap;
 import com.github.houbb.markdown.toc.support.codeblock.ICodeBlock;
 import com.github.houbb.markdown.toc.support.codeblock.impl.AtxCodeBlock;
-import com.github.houbb.markdown.toc.util.CollectionUtil;
-import com.github.houbb.markdown.toc.util.StringUtil;
 import com.github.houbb.markdown.toc.vo.TocVo;
 
 import java.util.ArrayList;

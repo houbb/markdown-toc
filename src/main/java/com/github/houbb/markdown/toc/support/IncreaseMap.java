@@ -1,9 +1,9 @@
 package com.github.houbb.markdown.toc.support;
 
+import com.github.houbb.heaven.util.lang.SpecialCharUtil;
+import com.github.houbb.heaven.util.lang.StringUtil;
 import com.github.houbb.markdown.toc.constant.TocConstant;
 import com.github.houbb.markdown.toc.constant.VersionConstant;
-import com.github.houbb.markdown.toc.util.SpecialCharUtil;
-import com.github.houbb.markdown.toc.util.StringUtil;
 
 import org.apiguardian.api.API;
 

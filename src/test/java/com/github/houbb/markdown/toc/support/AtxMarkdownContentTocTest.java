@@ -5,20 +5,17 @@
 
 package com.github.houbb.markdown.toc.support;
 
+import com.github.houbb.heaven.util.io.FileUtil;
+import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.github.houbb.markdown.toc.support.md.MarkdownContentToc;
 import com.github.houbb.markdown.toc.support.md.impl.AtxMarkdownContentToc;
-import com.github.houbb.markdown.toc.util.CollectionUtil;
-import com.github.houbb.markdown.toc.util.FileUtil;
 import com.github.houbb.markdown.toc.util.TestPathUtil;
-
 import com.github.houbb.markdown.toc.vo.config.TocConfig;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 /**
@@ -106,8 +103,8 @@ public class AtxMarkdownContentTocTest {
     private List<String> getLines(final String filePath) {
         String fullPath = TestPathUtil.getAppRootPath(filePath);
         try {
-            return FileUtil.getFileContentEachLine(new FileInputStream(new File(fullPath)), 0);
-        } catch (FileNotFoundException e) {
+            return FileUtil.getFileContentEachLine(new File(fullPath), 0);
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

@@ -45,6 +45,12 @@ public class TocConfig {
      */
     private boolean order;
 
+    /**
+     * 头信息
+     * @since 1.2.0
+     */
+    private String tocHead;
+
     public Charset getCharset() {
         return charset;
     }
@@ -75,5 +81,13 @@ public class TocConfig {
 
     public void setOrder(boolean order) {
         this.order = order;
+    }
+
+    public String getTocHead() {
+        return tocHead;
+    }
+
+    public void setTocHead(String tocHead) {
+        this.tocHead = tocHead;
     }
 }
