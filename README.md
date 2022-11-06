@@ -34,6 +34,7 @@
 
 Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面展现。
 
+> [在线体验](https://houbb.github.io/opensource/sensitive-word)
 
 - 文档
 
