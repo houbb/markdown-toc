@@ -34,6 +34,17 @@
 
 Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面展现。
 
+- 文档
+
+[中文说明](README.md) | [English Readme](README-ENGLISH.md)
+
+> 备注
+
+对于标题，md 有两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 
+和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
+
+暂时只支持 **atx** 形式。
+
 # 快速体验
 
 > [在线体验](https://houbb.github.io/opensource/sensitive-word)
@@ -45,17 +56,6 @@ Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面�
 ps: 如果没有刷新，可以关闭文件重新打开即可。应该和 idea 对于文件变更的监听有关。
 
 > [idea 插件](https://github.com/houbb/markdown-toc/releases/download/1.0.0/markdown-toc-idea-plugin-1.0.0.zip)
-
-- 文档
-
-[中文说明](README.md) | [English Readme](README-ENGLISH.md)
-
-> 备注
-
-对于标题，md 有两种语法 [setext](http://docutils.sourceforge.net/mirror/setext.html) 
-和 [atx](http://www.aaronsw.com/2002/atx/) 模式。
-
-暂时只支持 **atx** 形式。
 
 ## 变更日志
 
