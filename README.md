@@ -34,7 +34,17 @@
 
 Markdown-toc 可以用来生成 markdown 页面的目录，便于 github 页面展现。
 
+# 快速体验
+
 > [在线体验](https://houbb.github.io/opensource/sensitive-word)
+
+## idea 插件
+
+为了便于大家日常开发，整合了 idea 插件。直接 install from disk，在文件上右键/或者在文件中右键，选择第一个【MarkdownTocGen】即可生成。
+
+ps: 如果没有刷新，可以关闭文件重新打开即可。应该和 idea 对于文件变更的监听有关。
+
+> [idea 插件](https://github.com/houbb/markdown-toc/releases/download/1.0.0/markdown-toc-idea-plugin-1.0.0.zip)
 
 - 文档
 
